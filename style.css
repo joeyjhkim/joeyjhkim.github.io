@@ -59,3 +59,10 @@ section {
   text-decoration: none;
   font-weight: bold;
 }
+
+#finance h2 {
+  color: #0c3295;
+  border-bottom: 3px solid #64ffda;
+  display: inline-block;
+  padding-bottom: 5px;
+}
