@@ -1,2 +1,2 @@
 # joeyjhkim.github.io
-Joey's website
+Joey's online portfolio. Work in Progress
