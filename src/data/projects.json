@@ -1,0 +1,40 @@
+[
+    {
+        "title": "Voice Controlled Robotic Arm Assistant",
+        "imageSrc": "/assets/projects/robot_icon.png",
+        "description": "Custom robotic arm with AI companion with speech recognition",
+        "skills":["CAD", "ML", "FEA"],
+        "demo": "/assets/projects/demo/counterfeit_project.pdf",
+        "code": "https://github.com/joeyjhkim/projectlisa"
+    },
+    {
+        "title": "TPMS for Headgear Impact Protection",
+        "imageSrc": "/assets/projects/bike_helmet.png",
+        "description": "Developing headgear with TPMS structures to improve shear protection with improved strength to weight efficiency",
+        "skills":["CAD", "FEA", "Data Analysis/Visuals"],
+        "demo": "/assets/projects/demo/flight_delay_report.pdf"
+    },
+    {
+        "title": "Personal Productivity, Fitness, and Goals App",
+        "imageSrc": "/assets/projects/app_icon.png",
+        "description": "IOS app to track daily productivity, fitness, and goals with SwiftUI",
+        "skills":["Swift", "SwiftUI", "Front/Back End"],
+        "code": "https://github.com/joeyjhkim/roadtochallenger"
+    },
+    {
+        "title": "Modeling Equity Option Performance",
+        "imageSrc": "/assets/projects/options_icon.png",
+        "description": "Options hit probabilities and expected payoff timing calculator",
+        "skills":["Numpy", "Matplotlib", "Derivatives Trading", "Tkinter"],
+        "demo": "/assets/projects/demo/options_calc_workflow.pdf",
+        "code": "https://github.com/joeyjhkim/optionspricing"
+    },
+    {
+        "title": "Detecting Faulty PCBs Using Thermal Image Analysis",
+        "imageSrc": "/assets/projects/thermal_pcb_icon.png",
+        "description": "97% accuracy detecting faulty connections on PCBs using thermal image processing",
+        "skills":["Image Processing", "MATLAB", "Data Analysis/Visuals"],
+        "demo": "/assets/projects/demo/faulty_pcb_paper.pdf",
+        "code": "https://github.com/joeyjhkim/faultyPCBdetection"
+    }
+]

@@ -1,0 +1,40 @@
+[
+    {
+      "role": "Test Engineer",
+      "organisation": "Tesla",
+      "startDate": "Jan 2025",
+      "endDate": "Jul 2025",
+      "experiences": [
+        "RCA through systematic test execution and fault injection of electronic subassembly failures for Tesla Megapack",
+        "Electrical and mechanical test fixture design, fabrication, and implementation",
+        "Independently secure vendore support to keep development cycles moving with dependency delays",
+        "Was the central point of contact across engineering, suppliers, and operations to align priorities and ensure timely implementation of test fixtures"
+
+      ],
+      "imageSrc": "/assets/experience/tesla_logo.png"
+    },
+    {
+      "role": "Mechanical Engineer",
+      "organisation": "Cognosos",
+      "startDate": "Jan 2024",
+      "endDate": "Aug 2024",
+      "experiences": [
+        "Incorporated DFM principles to optimize CAD",
+        "Oversaw company-wide data migration and fabrication operations",
+        "Established repeatable workflows for file transfer and documentation"
+      ],
+      "imageSrc": "/assets/experience/cognosos_logo.png"
+    },
+    {
+      "role": "Research Assistant",
+      "organisation": "Computational Design and Metamaterials Lab",
+      "startDate": "Aug 2024",
+      "endDate": "Present",
+      "experiences": [
+        "TPMS validation through shear and axial testing",
+        "Designed a tube with both dilative and compressive properties as an alternative to surgical ETTs",
+        "Modeled bistable unit cells to create metamaterials with 2 degrees of freedom on flat surfaces and neutral buoyance with 3 degrees of freedom underwater"
+      ],
+      "imageSrc": "/assets/experience/GT_logo.png"
+    }
+]
