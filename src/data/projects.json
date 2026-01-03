@@ -4,15 +4,12 @@
         "imageSrc": "/assets/projects/robot_icon.png",
         "description": "Custom robotic arm with AI companion with speech recognition",
         "skills":["CAD", "ML", "FEA"],
-        "demo": "/assets/projects/demo/counterfeit_project.pdf",
-        "code": "https://github.com/joeyjhkim/projectlisa"
     },
     {
         "title": "TPMS for Headgear Impact Protection",
         "imageSrc": "/assets/projects/bike_helmet.png",
         "description": "Developing headgear with TPMS structures to improve shear protection with improved strength to weight efficiency",
         "skills":["CAD", "FEA", "Data Analysis/Visuals"],
-        "demo": "/assets/projects/demo/flight_delay_report.pdf"
     },
     {
         "title": "Personal Productivity, Fitness, and Goals App",
