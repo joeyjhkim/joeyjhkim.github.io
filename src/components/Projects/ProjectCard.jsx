@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./ProjectCard.module.css";
 
 export const ProjectCard = ({
-  project: { title, imageSrc, description, skills, demo, code, poster},
+  project: { title, imageSrc, description, skills, demo, workflow, paper, code, poster},
 }) => {
   return (
     <div className={styles.container}>
@@ -29,6 +29,26 @@ export const ProjectCard = ({
             {demo && (
               <a
                 href={demo}
+                className={styles.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Demo
+              </a>
+            )}
+            {workflow && (
+              <a
+                href={workflow}
+                className={styles.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Workflow
+              </a>
+            )}
+            {paper && (
+              <a
+                href={paper}
                 className={styles.link}
                 target="_blank"
                 rel="noopener noreferrer"

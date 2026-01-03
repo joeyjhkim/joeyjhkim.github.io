@@ -23,7 +23,7 @@
         "imageSrc": "/assets/projects/options_icon.png",
         "description": "Options hit probabilities and expected payoff timing calculator",
         "skills":["Numpy", "Matplotlib", "Derivatives Trading", "Tkinter"],
-        "demo": "/assets/projects/demo/options_calc_workflow.pdf",
+        "workflow": "/assets/projects/demo/options_calc_workflow.pdf",
         "code": "https://github.com/joeyjhkim/optionspricing"
     },
     {
@@ -31,7 +31,7 @@
         "imageSrc": "/assets/projects/thermal_pcb_icon.png",
         "description": "97% accuracy detecting faulty connections on PCBs using thermal image processing",
         "skills":["Image Processing", "MATLAB", "Data Analysis/Visuals"],
-        "demo": "/assets/projects/demo/faulty_pcb_paper.pdf",
+        "paper": "/assets/projects/demo/faulty_pcb_paper.pdf",
         "code": "https://github.com/joeyjhkim/faultyPCBdetection"
     }
 ]
