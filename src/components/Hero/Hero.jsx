@@ -10,9 +10,9 @@ export const Hero = () => {
       <div className={styles.content}>
         <h1 className={styles.title}>Hi, I'm Joey Jaehyeok Kim</h1>
         <p className={styles.description}>
-            I am a 4th year Mechanical Engineering student.<br />
-            Always learning and helping others.<br />
-            Feel free to reach out!
+            Mechanical Engineering student at Georgia Tech.<br />
+            Ex-Tesla test engineer. Researcher in computational design & metamaterials.<br />
+            Building things that work.
         </p>
         <a href="#contact" className={styles.contactBtn}>
           Contact Me

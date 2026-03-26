@@ -1,7 +1,7 @@
 [
     {
         "title": "Computer Aided Design (CAD)",
-        "imageSrc": "/assets/skills/data_processing.png"
+        "imageSrc": "/assets/skills/innovation.png"
     },
     {
         "title": "Data Processing",
@@ -9,15 +9,15 @@
     },
     {
         "title": "Design for Manufacturing and Assembly (DFMA)",
-        "imageSrc": "/assets/skills/machine_learning.png"
+        "imageSrc": "/assets/skills/nlp.png"
     },
     {
         "title": "Finite Element Analysis (FEA)",
-        "imageSrc": "/assets/skills/innovation.png"
+        "imageSrc": "/assets/skills/backend.png"
     },
     {
         "title": "Fused Deposition Modeling (FDM)",
-        "imageSrc": "/assets/skills/nlp.png"
+        "imageSrc": "/assets/skills/web-analytics.png"
     },
     {
         "title": "Project Management",
@@ -25,6 +25,6 @@
     },
     {
         "title": "Root Cause Analysis (RCA)",
-        "imageSrc": "/assets/skills/web-analytics.png"
+        "imageSrc": "/assets/skills/machine_learning.png"
     }
 ]

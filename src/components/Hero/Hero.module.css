@@ -26,8 +26,8 @@
   font-family: var(--font-roboto);
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 1) 120%, /* gradient start change percentage orginal 70%*/
-    rgba(255, 255, 255, 0) 120%
+    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 0) 100%
   );
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
