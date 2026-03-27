@@ -1,0 +1,27 @@
+<svg width="400" height="400" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top plate -->
+  <rect x="15" y="6" width="70" height="6" rx="2" fill="#D97706"/>
+  <!-- Spring coils -->
+  <path d="
+    M 50 12
+    C 85 12, 85 22, 50 22
+    C 15 22, 15 32, 50 32
+    C 85 32, 85 42, 50 42
+    C 15 42, 15 52, 50 52
+    C 85 52, 85 62, 50 62
+    C 15 62, 15 72, 50 72
+    C 85 72, 85 82, 50 82
+  "
+    fill="none"
+    stroke="#F59E0B"
+    stroke-width="5.5"
+    stroke-linecap="round"
+  />
+  <!-- Bottom plate -->
+  <rect x="15" y="82" width="70" height="6" rx="2" fill="#D97706"/>
+  <!-- Force arrows -->
+  <line x1="50" y1="2" x2="50" y2="6" stroke="#FCD34D" stroke-width="2"/>
+  <polygon points="50,0 47,4 53,4" fill="#FCD34D"/>
+  <line x1="50" y1="94" x2="50" y2="98" stroke="#FCD34D" stroke-width="2"/>
+  <polygon points="50,100 47,96 53,96" fill="#FCD34D"/>
+</svg>

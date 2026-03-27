@@ -1,0 +1,36 @@
+<svg width="400" height="400" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- CPU pins - top row -->
+  <rect x="28" y="5" width="5" height="10" rx="1" fill="#60A5FA"/>
+  <rect x="38" y="5" width="5" height="10" rx="1" fill="#60A5FA"/>
+  <rect x="48" y="5" width="5" height="10" rx="1" fill="#60A5FA"/>
+  <rect x="58" y="5" width="5" height="10" rx="1" fill="#60A5FA"/>
+  <!-- CPU pins - bottom row -->
+  <rect x="28" y="85" width="5" height="10" rx="1" fill="#60A5FA"/>
+  <rect x="38" y="85" width="5" height="10" rx="1" fill="#60A5FA"/>
+  <rect x="48" y="85" width="5" height="10" rx="1" fill="#60A5FA"/>
+  <rect x="58" y="85" width="5" height="10" rx="1" fill="#60A5FA"/>
+  <!-- CPU pins - left column -->
+  <rect x="5" y="28" width="10" height="5" rx="1" fill="#60A5FA"/>
+  <rect x="5" y="38" width="10" height="5" rx="1" fill="#60A5FA"/>
+  <rect x="5" y="48" width="10" height="5" rx="1" fill="#60A5FA"/>
+  <rect x="5" y="58" width="10" height="5" rx="1" fill="#60A5FA"/>
+  <!-- CPU pins - right column -->
+  <rect x="85" y="28" width="10" height="5" rx="1" fill="#60A5FA"/>
+  <rect x="85" y="38" width="10" height="5" rx="1" fill="#60A5FA"/>
+  <rect x="85" y="48" width="10" height="5" rx="1" fill="#60A5FA"/>
+  <rect x="85" y="58" width="10" height="5" rx="1" fill="#60A5FA"/>
+  <!-- Chip body -->
+  <rect x="15" y="15" width="70" height="70" rx="5" fill="#1D4ED8"/>
+  <!-- Die (inner chip area) -->
+  <rect x="25" y="25" width="50" height="50" rx="3" fill="#2563EB"/>
+  <!-- Heat gradient overlay (thermal effect) -->
+  <rect x="33" y="33" width="34" height="34" rx="2" fill="#EF4444" opacity="0.85"/>
+  <!-- Core grid lines -->
+  <line x1="50" y1="33" x2="50" y2="67" stroke="#FCA5A5" stroke-width="1" opacity="0.6"/>
+  <line x1="33" y1="50" x2="67" y2="50" stroke="#FCA5A5" stroke-width="1" opacity="0.6"/>
+  <!-- Heat glow dots at cores -->
+  <circle cx="42" cy="42" r="4" fill="#FEF3C7" opacity="0.9"/>
+  <circle cx="58" cy="42" r="4" fill="#FEF3C7" opacity="0.9"/>
+  <circle cx="42" cy="58" r="4" fill="#FEF3C7" opacity="0.9"/>
+  <circle cx="58" cy="58" r="4" fill="#FEF3C7" opacity="0.9"/>
+</svg>
