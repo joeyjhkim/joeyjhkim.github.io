@@ -40,7 +40,7 @@
 
 .skillImageContainer {
   /* background-color: var(--color-secondary); */
-  background-color: rgba(183, 179, 135, 0.864);
+  background-color: rgba(139, 124, 248, 0.15);
   border-radius: 100%;
   display: flex;
   align-items: center;
@@ -55,7 +55,7 @@
 
 .skill p {
   font-size: 23px;
-  font-family: var(--font-roboto);
+  font-family: var(--font-nunito);
   font-weight: 500;
 }
 
@@ -71,7 +71,7 @@
   flex-direction: row;
   align-items: center;
   gap: 17px;
-  background: rgba(183, 179, 135, 0.864);
+  background: rgba(139, 124, 248, 0.15);
   /* background: linear-gradient(90deg, #4591fb 0%, rgba(183, 179, 135, 0.864) 100%); */
   border-radius: 10px;
   padding: 24px;
@@ -82,7 +82,7 @@
 }
 
 .historyItemDetails {
-  font-family: var(--font-roboto);
+  font-family: var(--font-nunito);
 }
 
 .historyItemDetails h3 {

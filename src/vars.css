@@ -1,12 +1,11 @@
-/* For font */
 :root {
     /* Colors */
-    --color-text: #fff;
-    --color-primary: #576cbc;
-    --color-secondary: #19376d;
-    --color-dark: #0b2447;
-    --color-bg: #04152d;
+    --color-text: #dde4f0;
+    --color-primary: #8b7cf8;
+    --color-secondary: #1c1a3a;
+    --color-dark: #131224;
+    --color-bg: #0e0e1a;
 
     /* Fonts */
-    --font-roboto: "Roboto";
+    --font-nunito: "Nunito", sans-serif;
 }

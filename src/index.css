@@ -1,7 +1,8 @@
-/* Styling for entire website */
-* { /*  * is to target all the elements */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;900&display=swap');
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Outfit", Arial, Helvetica, sans-serif;
+  font-family: "Nunito", sans-serif;
 }

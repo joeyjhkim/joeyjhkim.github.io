@@ -23,11 +23,11 @@
   font-size: 60px;
   font-weight: 900;
   margin-bottom: 33px;
-  font-family: var(--font-roboto);
+  font-family: var(--font-nunito);
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 1) 70%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(221, 228, 240, 1) 70%,
+    rgba(221, 228, 240, 0) 100%
   );
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -35,7 +35,7 @@
 
 .description {
   font-size: 25px;
-  font-family: var(--font-roboto);
+  font-family: var(--font-nunito);
   margin-bottom: 52px;
   margin-right: 25px;
 }
@@ -86,7 +86,7 @@
   top: -128px;
   left: -10vw;
   border-radius: 764px;
-  background: rgba(25, 55, 109, 0.7);
+  background: rgba(99, 79, 220, 0.3);
   filter: blur(100px);
   z-index: 0;
 }
@@ -100,7 +100,7 @@
   top: 246px;
   right: -25vw;
   border-radius: 764px;
-  background: rgba(25, 55, 109, 0.7);
+  background: rgba(99, 79, 220, 0.3);
   filter: blur(100px);
   z-index: 0;
 }
