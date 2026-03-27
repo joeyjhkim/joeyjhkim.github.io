@@ -9,7 +9,7 @@
     {
         "title": "2D CPU/GPU Die Thermal Simulation",
         "imageSrc": "/assets/projects/cpugpu_icon.svg",
-        "description": "Transient and steady-state 2D heat transfer simulation of a chip package (silicon die, TIM, copper heatspreader) using explicit and implicit finite difference methods.",
+        "description": "2D finite difference simulation of CPU/GPU chip package heat transfer, comparing explicit and implicit transient solvers against steady-state.",
         "skills": ["MATLAB", "Thermal Analysis", "Numerical Methods", "FEA"]
     },
     {

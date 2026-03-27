@@ -39,14 +39,21 @@
 }
 
 .skillImageContainer {
-  /* background-color: var(--color-secondary); */
-  background-color: rgba(139, 124, 248, 0.15);
+  background-color: rgba(139, 124, 248, 0.22);
+  border: 1px solid rgba(139, 124, 248, 0.35);
   border-radius: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 120px;
   height: 120px;
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill:hover .skillImageContainer {
+  background-color: rgba(139, 124, 248, 0.45);
+  transform: scale(1.1);
+  box-shadow: 0 0 18px rgba(139, 124, 248, 0.4);
 }
 
 .skillImageContainer img {
@@ -55,7 +62,7 @@
 
 .skill p {
   font-size: 23px;
-  font-family: var(--font-nunito);
+  font-family: var(--font-dm-sans);
   font-weight: 500;
 }
 
@@ -71,10 +78,18 @@
   flex-direction: row;
   align-items: center;
   gap: 17px;
-  background: rgba(139, 124, 248, 0.15);
-  /* background: linear-gradient(90deg, #4591fb 0%, rgba(183, 179, 135, 0.864) 100%); */
+  background: rgba(139, 124, 248, 0.12);
+  border: 1px solid rgba(139, 124, 248, 0.2);
   border-radius: 10px;
   padding: 24px;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.historyItem:hover {
+  background: rgba(139, 124, 248, 0.28);
+  border-color: rgba(139, 124, 248, 0.55);
+  transform: translateX(6px);
+  box-shadow: 0 4px 24px rgba(139, 124, 248, 0.2);
 }
 
 .historyItem img {
@@ -82,7 +97,7 @@
 }
 
 .historyItemDetails {
-  font-family: var(--font-nunito);
+  font-family: var(--font-dm-sans);
 }
 
 .historyItemDetails h3 {

@@ -23,7 +23,7 @@
   font-size: 60px;
   font-weight: 900;
   margin-bottom: 33px;
-  font-family: var(--font-nunito);
+  font-family: var(--font-dm-sans);
   background: linear-gradient(
     90deg,
     rgba(221, 228, 240, 1) 70%,
@@ -35,7 +35,7 @@
 
 .description {
   font-size: 25px;
-  font-family: var(--font-nunito);
+  font-family: var(--font-dm-sans);
   margin-bottom: 52px;
   margin-right: 25px;
 }
@@ -52,7 +52,7 @@
 }
 
 .heroImg {
-  width: 45%;
+  width: 38%;
   border-radius: 50%; /* makes picture circular */
 
   z-index: 1;
