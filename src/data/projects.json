@@ -1,5 +1,33 @@
 [
     {
+        "title": "Helical Compression Spring Design Optimization",
+        "imageSrc": "/assets/projects/spring_icon.png",
+        "description": "Minimum-mass spring optimization using fmincon under 7 constraints including stress, surge frequency, and buckling. Material: ASTM A228 music wire.",
+        "skills": ["MATLAB", "Optimization", "Mechanical Design", "FEA"],
+        "paper": "/assets/projects/demo/spring_report.pdf"
+    },
+    {
+        "title": "2D CPU/GPU Die Thermal Simulation",
+        "imageSrc": "/assets/projects/cpugpu_icon.png",
+        "description": "Transient and steady-state 2D heat transfer simulation of a chip package (silicon die, TIM, copper heatspreader) using explicit and implicit finite difference methods.",
+        "skills": ["MATLAB", "Thermal Analysis", "Numerical Methods", "FEA"]
+    },
+    {
+        "title": "Detecting Faulty PCBs Using Thermal Image Analysis",
+        "imageSrc": "/assets/projects/thermal_pcb_icon.png",
+        "description": "97% accuracy detecting faulty connections on PCBs using thermal image processing",
+        "skills":["Image Processing", "MATLAB", "Data Analysis/Visuals"],
+        "paper": "/assets/projects/demo/faulty_pcb_paper.pdf",
+        "code": "https://github.com/joeyjhkim/faultyPCBdetection"
+    },
+    {
+        "title": "Apple iPod Design Challenge",
+        "imageSrc": "/assets/projects/apple_design_icon.svg",
+        "description": "Two competing CAD design concepts for an Apple iPod redesign, with full assemblies, schematics, and DFM analysis.",
+        "skills": ["CAD", "DFMA", "Product Design", "SolidWorks"],
+        "paper": "/assets/projects/demo/apple_design_challenge.pdf"
+    },
+    {
         "title": "Voice Controlled Robotic Arm Assistant",
         "imageSrc": "/assets/projects/robot_icon.png",
         "description": "Custom robotic arm with AI companion with speech recognition",
@@ -25,33 +53,5 @@
         "skills":["Numpy", "Matplotlib", "Derivatives Trading", "Tkinter"],
         "workflow": "/assets/projects/demo/options_calc_workflow.pdf",
         "code": "https://github.com/joeyjhkim/optionspricing"
-    },
-    {
-        "title": "Detecting Faulty PCBs Using Thermal Image Analysis",
-        "imageSrc": "/assets/projects/thermal_pcb_icon.png",
-        "description": "97% accuracy detecting faulty connections on PCBs using thermal image processing",
-        "skills":["Image Processing", "MATLAB", "Data Analysis/Visuals"],
-        "paper": "/assets/projects/demo/faulty_pcb_paper.pdf",
-        "code": "https://github.com/joeyjhkim/faultyPCBdetection"
-    },
-    {
-        "title": "Helical Compression Spring Design Optimization",
-        "imageSrc": "/assets/projects/spring_icon.png",
-        "description": "Minimum-mass spring optimization using fmincon under 7 constraints including stress, surge frequency, and buckling. Material: ASTM A228 music wire.",
-        "skills": ["MATLAB", "Optimization", "Mechanical Design", "FEA"],
-        "paper": "/assets/projects/demo/spring_report.pdf"
-    },
-    {
-        "title": "2D CPU/GPU Die Thermal Simulation",
-        "imageSrc": "/assets/projects/cpugpu_icon.png",
-        "description": "Transient and steady-state 2D heat transfer simulation of a chip package (silicon die, TIM, copper heatspreader) using explicit and implicit finite difference methods.",
-        "skills": ["MATLAB", "Thermal Analysis", "Numerical Methods", "FEA"]
-    },
-    {
-        "title": "Apple iPod Design Challenge",
-        "imageSrc": "/assets/projects/apple_design_icon.svg",
-        "description": "Two competing CAD design concepts for an Apple iPod redesign, with full assemblies, schematics, and DFM analysis.",
-        "skills": ["CAD", "DFMA", "Product Design", "SolidWorks"],
-        "paper": "/assets/projects/demo/apple_design_challenge.pdf"
     }
 ]
