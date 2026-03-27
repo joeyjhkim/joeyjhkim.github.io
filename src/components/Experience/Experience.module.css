@@ -39,8 +39,8 @@
 }
 
 .skillImageContainer {
-  background-color: rgba(139, 124, 248, 0.22);
-  border: 1px solid rgba(139, 124, 248, 0.35);
+  background-color: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.28);
   border-radius: 100%;
   display: flex;
   align-items: center;
@@ -51,9 +51,9 @@
 }
 
 .skill:hover .skillImageContainer {
-  background-color: rgba(139, 124, 248, 0.45);
+  background-color: rgba(56, 189, 248, 0.28);
   transform: scale(1.1);
-  box-shadow: 0 0 18px rgba(139, 124, 248, 0.4);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.35);
 }
 
 .skillImageContainer img {
@@ -78,18 +78,20 @@
   flex-direction: row;
   align-items: center;
   gap: 17px;
-  background: rgba(139, 124, 248, 0.12);
-  border: 1px solid rgba(139, 124, 248, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-left: 3px solid rgba(56, 189, 248, 0.5);
   border-radius: 10px;
   padding: 24px;
   transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .historyItem:hover {
-  background: rgba(139, 124, 248, 0.28);
-  border-color: rgba(139, 124, 248, 0.55);
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.4);
+  border-left-color: rgba(56, 189, 248, 0.9);
   transform: translateX(6px);
-  box-shadow: 0 4px 24px rgba(139, 124, 248, 0.2);
+  box-shadow: 0 4px 24px rgba(56, 189, 248, 0.12);
 }
 
 .historyItem img {

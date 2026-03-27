@@ -2,9 +2,12 @@
     /* Colors */
     --color-text: #dde4f0;
     --color-primary: #8b7cf8;
-    --color-secondary: #1c1a3a;
+    --color-secondary: #131320;
     --color-dark: #131224;
     --color-bg: #0e0e1a;
+    --color-teal: #4ecca3;
+    --color-sky: #38bdf8;
+    --color-surface: #14141f;
 
     /* Fonts */
     --font-dm-sans: "DM Sans", sans-serif;
