@@ -10,7 +10,8 @@
         "title": "2D CPU/GPU Die Thermal Simulation",
         "imageSrc": "/assets/projects/cpugpu_icon.svg",
         "description": "2D heat transfer simulation of a CPU/GPU chip stack using explicit, implicit, and steady-state finite difference solvers.",
-        "skills": ["MATLAB", "Thermal Analysis", "Numerical Methods", "FEA"]
+        "skills": ["MATLAB", "Thermal Analysis", "Numerical Methods", "FEA"],
+        "paper": "/assets/projects/demo/cpu_gpu_thermal_report.pdf"
     },
     {
         "title": "Detecting Faulty PCBs Using Thermal Image Analysis",

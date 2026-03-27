@@ -57,6 +57,7 @@
   font-weight: 400;
   border-radius: 100px;
   background: var(--color-dark);
+  border: 1px solid rgba(139, 124, 248, 0.5);
   padding: 2px 22px;
 }
 
