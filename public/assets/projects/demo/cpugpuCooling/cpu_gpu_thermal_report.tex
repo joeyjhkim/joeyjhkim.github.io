@@ -222,8 +222,8 @@ for interior nodes. Edge and corner nodes use the appropriate convective
 boundary stencils from Incropera~\cite{incropera2011}. Stability is
 enforced by:
 
-{\setlength{\abovedisplayskip}{4pt}%
-\setlength{\belowdisplayskip}{4pt}%
+{\setlength{\abovedisplayskip}{2pt}%
+\setlength{\belowdisplayskip}{2pt}%
 \begin{equation}
   \mathrm{Fo} \le \min\!\left(
     \tfrac{1}{4},\;
@@ -280,6 +280,7 @@ transient, with three hot-spots clearly visible at the core locations.
 Cyan and blue dashed lines mark the Si/TIM and TIM/Cu interfaces.
 
 \begin{figure}[H]
+  \vspace{-6pt}
   \centering
   \includegraphics[width=\columnwidth]{fig1_transient_early.png}
   \caption{Explicit FTCS temperature field during early transient heating.
@@ -289,6 +290,7 @@ Cyan and blue dashed lines mark the Si/TIM and TIM/Cu interfaces.
   \label{fig:transient}
 \end{figure}
 
+\vspace{-6pt}
 \subsection{Steady-State Temperature Distribution}
 
 All three solvers converge to the same steady-state field, providing
@@ -323,6 +325,7 @@ explicit, steady-state, and implicit solutions at the same time instant,
 confirming solver agreement.
 
 \begin{figure}[H]
+  \vspace{-6pt}
   \centering
   \includegraphics[width=\columnwidth]{fig3_solver_comparison.png}
   \caption{Three-panel solver comparison: explicit FTCS (left),
@@ -332,6 +335,7 @@ confirming solver agreement.
   \label{fig:comparison}
 \end{figure}
 
+\vspace{-6pt}
 \subsection{Cool-Down Phase}
 
 After the heat sources are deactivated, the chip returns to ambient
@@ -341,6 +345,7 @@ stores more energy. The peak-temperature cool-down follows an
 approximately exponential decay toward $T_\infty$.
 
 \begin{figure}[H]
+  \vspace{-6pt}
   \centering
   \includegraphics[width=\columnwidth]{fig4_cooldown.png}
   \caption{Temperature field during the cool-down phase after heat
@@ -350,6 +355,7 @@ approximately exponential decay toward $T_\infty$.
   \label{fig:cooldown}
 \end{figure}
 
+\vspace{-6pt}
 \subsection{Solver Comparison}
 
 Table~\ref{tab:solvers} summarizes the key trade-offs among the three
