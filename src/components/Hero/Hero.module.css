@@ -24,13 +24,7 @@
   font-weight: 900;
   margin-bottom: 33px;
   font-family: var(--font-dm-sans);
-  background: linear-gradient(
-    90deg,
-    rgba(221, 228, 240, 1) 70%,
-    rgba(221, 228, 240, 0) 100%
-  );
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
+  color: var(--color-text);
 }
 
 .description {
