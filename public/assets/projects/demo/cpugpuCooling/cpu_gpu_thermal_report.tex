@@ -62,7 +62,21 @@
 \usepackage{enumitem}
 \setlist[itemize]{noitemsep,topsep=2pt}
 \usepackage{parskip}
-\setlength{\parskip}{4pt}
+\setlength{\parskip}{2pt}
+
+% ── Global spacing tightening ─────────────────────────────────────────────────
+% Float separation (space between floats and text)
+\setlength{\textfloatsep}{6pt plus 2pt minus 2pt}
+\setlength{\floatsep}{4pt plus 2pt minus 2pt}
+\setlength{\intextsep}{4pt plus 2pt minus 2pt}
+% Caption spacing
+\setlength{\abovecaptionskip}{3pt}
+\setlength{\belowcaptionskip}{0pt}
+% Equation spacing (global default)
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlength{\abovedisplayshortskip}{1pt}
+\setlength{\belowdisplayshortskip}{3pt}
 
 % ==============================================================================
 \begin{document}
@@ -127,7 +141,6 @@ The computational domain is a 2D cross-section of a chip package:
 stacked in the $z$-direction, as summarized in Table~\ref{tab:layers}.
 
 \begin{table}[H]
-  \vspace{-4pt}
   \centering
   \caption{Material layers and thermal properties.}
   \label{tab:layers}
@@ -142,7 +155,6 @@ stacked in the $z$-direction, as summarized in Table~\ref{tab:layers}.
     Cu spreader & 2.5 & 400 & 8960 & 385 \\
     \bottomrule
   \end{tabular}
-  \vspace{-4pt}
 \end{table}
 
 \subsection{Heat Sources}
@@ -160,7 +172,6 @@ Boundary conditions are applied to the four domain edges as listed in
 Table~\ref{tab:bc}.
 
 \begin{table}[H]
-  \vspace{-4pt}
   \centering
   \caption{Boundary conditions.}
   \label{tab:bc}
@@ -175,7 +186,6 @@ Table~\ref{tab:bc}.
     Bottom ($z = 0$)           & Adiabatic (insulated PCB side) \\
     \bottomrule
   \end{tabular}
-  \vspace{-4pt}
 \end{table}
 
 The initial condition is uniform: $T(x,z,0) = T_\infty = \SI{300}{K}$.
@@ -188,15 +198,13 @@ The initial condition is uniform: $T(x,z,0) = T_\infty = \SI{300}{K}$.
 
 The 2D transient heat diffusion equation with internal generation is:
 
-{\setlength{\abovedisplayskip}{2pt}%
-\setlength{\belowdisplayskip}{2pt}%
 \begin{equation}
   \rho c_p \frac{\partial T}{\partial t}
   = k \left(\frac{\partial^2 T}{\partial x^2}
            + \frac{\partial^2 T}{\partial z^2}\right)
     + \dot{q}'''
   \label{eq:gov}
-\end{equation}}
+\end{equation}
 
 A uniform square grid with $\Delta x = \Delta z = \SI{2}{mm}$ is applied,
 yielding $N_x = 11$, $N_z = 4$ effective nodes per layer. The Fourier and
@@ -214,8 +222,6 @@ Biot numbers are defined nodally:
 The explicit forward-time central-space scheme advances the temperature
 field using only known values at time level $n$:
 
-{\setlength{\abovedisplayskip}{2pt}%
-\setlength{\belowdisplayskip}{2pt}%
 \begin{equation}
   \begin{aligned}
   T_{i,j}^{n+1} &= \mathrm{Fo}\bigl(T_{i+1,j}^n + T_{i-1,j}^n
@@ -224,14 +230,12 @@ field using only known values at time level $n$:
                 + \mathrm{Fo}\cdot\frac{\dot{q}'''\,\Delta x^2}{k}
   \end{aligned}
   \label{eq:explicit}
-\end{equation}}
+\end{equation}
 
 for interior nodes. Edge and corner nodes use the appropriate convective
 boundary stencils from Incropera~\cite{incropera2011}. Stability is
 enforced by:
 
-{\setlength{\abovedisplayskip}{2pt}%
-\setlength{\belowdisplayskip}{2pt}%
 \begin{equation}
   \mathrm{Fo} \le \min\!\left(
     \tfrac{1}{4},\;
@@ -239,7 +243,7 @@ enforced by:
     \tfrac{1}{4(1+\mathrm{Bi})}
   \right)
   \label{eq:stability}
-\end{equation}}
+\end{equation}
 
 The time step is chosen as $\mathrm{Fo} = 0.45 \times \mathrm{Fo}_{\lim}$,
 evaluated using the globally maximum thermal diffusivity $\alpha_{\max}$
@@ -288,7 +292,6 @@ transient, with three hot-spots clearly visible at the core locations.
 Cyan and blue dashed lines mark the Si/TIM and TIM/Cu interfaces.
 
 \begin{figure}[H]
-  \vspace{-10pt}
   \centering
   \includegraphics[width=\columnwidth]{fig1_transient_early.png}
   \caption{Explicit FTCS temperature field during early transient heating.
@@ -298,7 +301,6 @@ Cyan and blue dashed lines mark the Si/TIM and TIM/Cu interfaces.
   \label{fig:transient}
 \end{figure}
 
-\vspace{-10pt}
 \subsection{Steady-State Temperature Distribution}
 
 All three solvers converge to the same steady-state field, providing
@@ -333,7 +335,6 @@ explicit, steady-state, and implicit solutions at the same time instant,
 confirming solver agreement.
 
 \begin{figure}[H]
-  \vspace{-10pt}
   \centering
   \includegraphics[width=\columnwidth]{fig3_solver_comparison.png}
   \caption{Three-panel solver comparison: explicit FTCS (left),
@@ -343,7 +344,6 @@ confirming solver agreement.
   \label{fig:comparison}
 \end{figure}
 
-\vspace{-10pt}
 \subsection{Cool-Down Phase}
 
 After the heat sources are deactivated, the chip returns to ambient
@@ -353,7 +353,6 @@ stores more energy. The peak-temperature cool-down follows an
 approximately exponential decay toward $T_\infty$.
 
 \begin{figure}[H]
-  \vspace{-10pt}
   \centering
   \includegraphics[width=\columnwidth]{fig4_cooldown.png}
   \caption{Temperature field during the cool-down phase after heat
@@ -363,14 +362,12 @@ approximately exponential decay toward $T_\infty$.
   \label{fig:cooldown}
 \end{figure}
 
-\vspace{-10pt}
 \subsection{Solver Comparison}
 
 Table~\ref{tab:solvers} summarizes the key trade-offs among the three
 methods.
 
 \begin{table}[H]
-  \vspace{-10pt}
   \centering
   \caption{Comparison of numerical solvers.}
   \label{tab:solvers}
