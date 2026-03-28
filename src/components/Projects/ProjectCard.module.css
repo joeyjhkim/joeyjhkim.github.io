@@ -13,14 +13,20 @@
   height: 830px;
 }
 
-.image {
+.imageWrapper {
+  height: 280px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 20px;
-  height: 350px;
-  width: 300px;
-  display: block;
+  flex-shrink: 0;
+}
+
+.image {
+  max-height: 100%;
+  max-width: 100%;
   object-fit: contain;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .title {
@@ -35,11 +41,6 @@
   margin-top: 6px;
   font-size: 20px;
   font-weight: 400;
-  height: 130px;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
-  overflow: hidden;
   line-height: 1.3;
 }
 
