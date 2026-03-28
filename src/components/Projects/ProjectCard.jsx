@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./ProjectCard.module.css";
 
 export const ProjectCard = ({
-  project: { title, imageSrc, description, skills, demo, workflow, paper, code, poster},
+  project: { title, imageSrc, description, skills, demo, workflow, paper, paperLabel, code, poster},
 }) => {
   return (
     <div className={styles.container}>
@@ -53,7 +53,7 @@ export const ProjectCard = ({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Paper
+                {paperLabel || "Paper"}
               </a>
             )}
             {code && (
