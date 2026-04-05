@@ -3,6 +3,7 @@
         "title": "Helical Compression Spring Design Optimization",
         "imageSrc": "/assets/projects/spring_icon.svg",
         "description": "Minimum-mass spring optimization using fmincon under 7 constraints including stress, surge frequency, and buckling. Material: ASTM A228 music wire.",
+        "details": "Formulated the minimum-mass design of a helical compression spring as a constrained nonlinear program in three variables: wire diameter, mean coil diameter, and active coil count. Seven inequality constraints enforce the Wahl-corrected shear stress limit (Zimmerli criterion), coil-bind clearance, spring-index manufacturability bounds, minimum deflection stroke, surge-frequency margin (13x operating frequency), and Euler-column buckling stability. Solved with MATLAB's fmincon interior-point algorithm from eight Latin-hypercube starting points, and independently validated by a 40x40 brute-force parametric sweep over the design space. Both methods converge to the same optimum: d = 2.965 mm, D = 12.665 mm, Na = 7.77 coils, yielding a spring mass of 21.1 g with a stress safety factor of exactly 1.00. Sensitivity analysis reveals allowable shear stress as the dominant design driver — a 10% relaxation of the stress limit reduces optimal mass by approximately 18%.",
         "skills": ["MATLAB", "Optimization", "Mechanical Design", "FEA"],
         "paper": "/assets/projects/demo/spring_report.pdf"
     },
@@ -10,6 +11,7 @@
         "title": "2D CPU/GPU Die Thermal Simulation",
         "imageSrc": "/assets/projects/cpugpu_icon.svg",
         "description": "2D heat transfer simulation of a CPU/GPU chip stack using explicit, implicit, and steady-state finite difference solvers.",
+        "details": "Implemented a 2D transient and steady-state thermal simulation of a multi-layer CPU/GPU chip package (20 mm x 6 mm cross-section) in MATLAB using finite difference methods. The domain models three physical layers — silicon die, thermal interface material (TIM), and copper heat spreader — with three localized volumetric heat sources representing CPU cores. Three solvers were built and compared: an explicit forward-time central-space (FTCS) scheme, an implicit backward-time central-space (BTCS) scheme solved with Gauss-Seidel iteration, and a direct steady-state Gauss-Seidel solver. Peak junction temperatures reach 380–420 K depending on core position, with the center core running hottest due to reduced lateral conduction. The TIM layer was identified as the dominant thermal resistance in the stack, and the copper heat spreader proved essential for laterally redistributing heat and reducing hotspot temperatures. All three solvers converge to the same steady-state distribution, validating the numerical implementation.",
         "skills": ["MATLAB", "Thermal Analysis", "Numerical Methods", "FEA"],
         "paper": "/assets/projects/demo/cpu_gpu_thermal_report.pdf"
     },
@@ -17,7 +19,8 @@
         "title": "Detecting Faulty PCBs Using Thermal Image Analysis",
         "imageSrc": "/assets/projects/thermal_pcb_icon.png",
         "description": "97% accuracy detecting faulty connections on PCBs using thermal image processing",
-        "skills":["Image Processing", "MATLAB", "Data Analysis/Visuals"],
+        "details": "Built a MATLAB image processing pipeline that detects faulty solder joints on printed circuit boards from thermal camera images. Synthetic thermal PCB images are generated as grids of circular pads with controlled defect injection — defective pads are assigned higher intensity to simulate excess heat dissipation from short circuits or degraded components, with additive Gaussian noise for realism. The detection pipeline preprocesses each image with grayscale conversion and Gaussian blur, then applies intensity thresholding (threshold = 0.8) to segment hotspot regions. Connected regions are extracted and characterized by centroid location and area. The system auto-generates a timestamped multi-page PDF report with side-by-side raw and annotated thermal images per board, plus CSV summaries for downstream analysis. Achieved 97% detection accuracy on the synthetic dataset.",
+        "skills": ["Image Processing", "MATLAB", "Data Analysis/Visuals"],
         "paper": "/assets/projects/demo/faulty_pcb_paper.pdf",
         "code": "https://github.com/joeyjhkim/faultyPCBdetection"
     },
@@ -25,6 +28,7 @@
         "title": "Apple iPod Design Challenge",
         "imageSrc": "/assets/projects/apple_design_icon.svg",
         "description": "Two competing CAD design concepts for an Apple iPod redesign, with full assemblies, schematics, and DFM analysis.",
+        "details": "Designed two competing battery door release mechanisms for the Classic iPod in SolidWorks. Design 1 uses elastic bending arms — a button press deflects integrated cantilever beams downward, disengaging retention features to release the door. Design 2 uses an inclined-surface (wedge) mechanism — a button press drives clasps laterally outward via a 50-degree wedge angle, converting vertical motion into horizontal displacement that lifts the battery door. After a pro/con trade study evaluating durability, cycle life, and manufacturing, Design 2 was selected for its controlled, repeatable actuation and resistance to creep and fatigue. Each design includes full CAD assemblies, section views, exploded views, component-level FEA (von Mises stress under extreme loads with safety factors ranging from 2.1 to 13.7), detailed bill of materials with unit cost estimates, and button ergonomics sized to DoD design criteria. All parts are injection-molded PC or ABS.",
         "skills": ["CAD", "DFMA", "Product Design", "SolidWorks"],
         "paper": "/assets/projects/demo/apple_design_challenge.pdf",
         "paperLabel": "Design Report"
@@ -33,26 +37,30 @@
         "title": "Voice Controlled Robotic Arm Assistant",
         "imageSrc": "/assets/projects/robot_icon.png",
         "description": "Custom robotic arm with AI companion with speech recognition",
-        "skills":["CAD", "ML", "FEA"]
+        "details": "Designed and built a custom robotic arm with integrated voice control using speech recognition and machine learning. The mechanical design was modeled in CAD with FEA validation of joint loads and deflection under payload. The control system translates spoken commands into servo movements through a trained speech-to-intent model, enabling hands-free operation for pick-and-place tasks.",
+        "skills": ["CAD", "ML", "FEA"]
     },
     {
         "title": "TPMS for Headgear Impact Protection",
         "imageSrc": "/assets/projects/bike_helmet.png",
         "description": "Developing headgear with TPMS structures to improve shear protection with improved strength to weight efficiency",
-        "skills":["CAD", "FEA", "Data Analysis/Visuals"]
+        "details": "Researching the use of Triply Periodic Minimal Surface (TPMS) lattice structures as energy-absorbing liners in protective headgear. TPMS geometries such as gyroid and Schwarz-P offer superior strength-to-weight ratios compared to traditional EPS foam. Using CAD modeling and finite element analysis, the project evaluates how different TPMS unit cell types, relative densities, and wall thicknesses affect impact energy absorption and shear force transmission. The goal is to develop a liner that reduces rotational acceleration during oblique impacts, improving protection against concussive injuries.",
+        "skills": ["CAD", "FEA", "Data Analysis/Visuals"]
     },
     {
         "title": "Personal Productivity, Fitness, and Goals App",
         "imageSrc": "/assets/projects/app_icon.png",
         "description": "IOS app to track daily productivity, fitness, and goals with SwiftUI",
-        "skills":["Swift", "SwiftUI", "Front/Back End"],
+        "details": "Built a personal productivity desktop application for tracking daily habits across productivity, fitness, and personal goals. The app runs fully offline with all data saved locally as a JSON file, surviving app updates and reboots. Features include a dashboard for tracking daily progress, streak monitoring, and customizable goal categories. Designed to help build consistent routines through visual progress feedback without requiring any cloud services or accounts.",
+        "skills": ["Swift", "SwiftUI", "Front/Back End"],
         "code": "https://github.com/joeyjhkim/roadtochallenger"
     },
     {
         "title": "Modeling Equity Option Performance",
         "imageSrc": "/assets/projects/options_icon.png",
         "description": "Options hit probabilities and expected payoff timing calculator",
-        "skills":["Numpy", "Matplotlib", "Derivatives Trading", "Tkinter"],
+        "details": "Built a Python GUI application for evaluating equity options contracts. The tool computes Black-Scholes theoretical fair value for calls and puts, then runs Monte Carlo price path simulations to estimate the probability of hitting a user-defined take-profit threshold and the average time to reach it. A smart verdict system compares the option's bid-ask midpoint against the theoretical value to classify contracts as undervalued, fairly priced, or overvalued. Integrates live market data from Yahoo Finance API to auto-fill spot price, dividend yield, and implied volatility. The pipeline flows from user input through market data fetch, pricing engine, Monte Carlo simulation, Greek calculation, and valuation verdict — all displayed in a Tkinter interface.",
+        "skills": ["Numpy", "Matplotlib", "Derivatives Trading", "Tkinter"],
         "workflow": "/assets/projects/demo/options_calc_workflow.pdf",
         "code": "https://github.com/joeyjhkim/optionspricing"
     }
