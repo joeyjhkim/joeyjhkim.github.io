@@ -3,7 +3,7 @@ import React, { useEffect, useCallback } from "react";
 import styles from "./ProjectModal.module.css";
 
 export const ProjectModal = ({ project, onClose }) => {
-  const { title, imageSrc, description, skills, demo, workflow, paper, paperLabel, code, poster } = project;
+  const { title, imageSrc, description, details, skills, demo, workflow, paper, paperLabel, code, poster } = project;
 
   const handleKeyDown = useCallback(
     (e) => {
@@ -48,7 +48,7 @@ export const ProjectModal = ({ project, onClose }) => {
 
           <div className={styles.details}>
             <h2 className={styles.title}>{title}</h2>
-            <p className={styles.description}>{description}</p>
+            <p className={styles.description}>{details || description}</p>
 
             <ul className={styles.skills}>
               {skills.map((skill, id) => (
