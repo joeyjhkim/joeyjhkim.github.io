@@ -1,5 +1,14 @@
 [
     {
+        "title": "2D/3D CFD of MacBook Pro 16-inch Thermal Management",
+        "imageSrc": "/assets/projects/macbook_cfd_icon.svg",
+        "description": "Two coupled Navier-Stokes + energy CFD solvers (2D and 3D) that predict the thermal field of a 16-inch MacBook Pro chassis under sustained CPU load. Validated against five independent published thermal reviews.",
+        "details": "Built two finite-volume CFD models from scratch in Python to predict the thermal field of a MacBook Pro 16-inch chassis under sustained CPU load. Both solvers use a staggered MAC grid, pseudo-transient Chorin projection with implicit Brinkman penalization, and direct sparse LU factorization of the pressure-correction Poisson equation via SciPy's splu. The 2D top-down formulation (260x180 grid, 18,875 flow cells) uses a 1D out-of-plane closure with an algebraic mixing-length turbulence model; the 3D formulation (90x62x16 grid, 49,662 flow cells) resolves the vertical dimension directly and includes an explicit thermal-interface-material layer above the SoC die. Convergence is monitored via two independent residuals - the L-infinity divergence on deep interior flow cells (machine precision, ~1e-13 in 2D and ~1e-11 in 3D) and the L-infinity momentum update for approach to steady state. A three-level grid refinement study (130x90, 260x180, 520x360) gives GCI <= 1.7% for battery, palm-rest, and exhaust metrics. The 2D model predicts SoC = 96 C; the 3D model predicts 81 C; the published range from five independent reviews (Notebookcheck, Tom's Hardware, AppleInsider, LaptopMedia) is 82-98 C. The 2D/3D spread is attributable to the 6x larger heat-loss surface area resolved in 3D plus the explicit TIM resistance.",
+        "skills": ["Python", "NumPy", "SciPy", "CFD", "Numerical Methods", "Validation"],
+        "paper": "/assets/projects/demo/macbook_cfd_report.pdf",
+        "code": "https://github.com/joeyjhkim/macbook-cfd"
+    },
+    {
         "title": "Helical Compression Spring Design Optimization",
         "imageSrc": "/assets/projects/spring_icon.svg",
         "description": "Minimum-mass spring optimization using fmincon under 7 constraints including stress, surge frequency, and buckling. Material: ASTM A228 music wire.",
