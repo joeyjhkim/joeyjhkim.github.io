@@ -44,8 +44,8 @@
   max-height: 85vh;
   overflow-y: auto;
   box-shadow:
-    0 24px 64px rgba(31, 33, 51, 0.25),
-    0 0 40px rgba(139, 124, 248, 0.15);
+    0 32px 64px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(139, 124, 248, 0.1);
   animation: slideUp 0.3s ease-out;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .closeBtn:hover {
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .content {
@@ -85,7 +85,7 @@
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: rgba(31, 33, 51, 0.04);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
 }
 
@@ -175,7 +175,7 @@
   background: var(--color-dark);
   border: 1px solid rgba(139, 124, 248, 0.5);
   padding: 4px 18px;
-  color: var(--color-text-inverse);
+  color: var(--color-text);
 }
 
 .links {
@@ -187,7 +187,7 @@
 
 .link {
   text-decoration: none;
-  color: var(--color-text-inverse);
+  color: var(--color-text);
   font-size: 16px;
   font-weight: 600;
   border-radius: 100px;
