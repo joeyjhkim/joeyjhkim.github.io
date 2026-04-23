@@ -48,7 +48,15 @@ export const ProjectModal = ({ project, onClose }) => {
 
           <div className={styles.details}>
             <h2 className={styles.title}>{title}</h2>
-            <p className={styles.description}>{details || description}</p>
+            {Array.isArray(details) ? (
+              <ul className={styles.detailsList}>
+                {details.map((item, id) => (
+                  <li key={id}>{item}</li>
+                ))}
+              </ul>
+            ) : (
+              <p className={styles.description}>{details || description}</p>
+            )}
 
             <ul className={styles.skills}>
               {skills.map((skill, id) => (

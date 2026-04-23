@@ -116,6 +116,50 @@
   opacity: 0.85;
 }
 
+.detailsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detailsList li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1.55;
+  opacity: 0.9;
+}
+
+.detailsList li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+@media screen and (max-width: 830px) {
+  .detailsList li {
+    font-size: 15px;
+    padding-left: 18px;
+  }
+
+  .detailsList li::before {
+    left: 2px;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+  }
+}
+
 .skills {
   display: flex;
   flex-wrap: wrap;

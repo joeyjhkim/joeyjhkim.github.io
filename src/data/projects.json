@@ -3,7 +3,16 @@
         "title": "2D/3D CFD of MacBook Pro 16-inch Thermal Management",
         "imageSrc": "/assets/projects/macbook_cfd_icon.svg",
         "description": "Two coupled Navier-Stokes + energy CFD solvers (2D and 3D) that predict the thermal field of a 16-inch MacBook Pro chassis under sustained CPU load. Validated against five independent published thermal reviews.",
-        "details": "Built two finite-volume CFD models from scratch in Python to predict the thermal field of a MacBook Pro 16-inch chassis under sustained CPU load. Both solvers use a staggered MAC grid, pseudo-transient Chorin projection with implicit Brinkman penalization, and direct sparse LU factorization of the pressure-correction Poisson equation via SciPy's splu. The 2D top-down formulation (260x180 grid, 18,875 flow cells) uses a 1D out-of-plane closure with an algebraic mixing-length turbulence model; the 3D formulation (90x62x16 grid, 49,662 flow cells) resolves the vertical dimension directly and includes an explicit thermal-interface-material layer above the SoC die. Convergence is monitored via two independent residuals - the L-infinity divergence on deep interior flow cells (machine precision, ~1e-13 in 2D and ~1e-11 in 3D) and the L-infinity momentum update for approach to steady state. A three-level grid refinement study (130x90, 260x180, 520x360) gives GCI <= 1.7% for battery, palm-rest, and exhaust metrics. The 2D model predicts SoC = 96 C; the 3D model predicts 81 C; the published range from five independent reviews (Notebookcheck, Tom's Hardware, AppleInsider, LaptopMedia) is 82-98 C. The 2D/3D spread is attributable to the 6x larger heat-loss surface area resolved in 3D plus the explicit TIM resistance.",
+        "details": [
+            "Built two finite-volume CFD solvers from scratch in Python (2D top-down and full 3D) to predict the thermal field of a 16-inch MacBook Pro chassis under sustained CPU load.",
+            "Used a staggered MAC grid, pseudo-transient Chorin projection with implicit Brinkman penalization, and direct sparse LU factorization of the pressure-correction Poisson equation via SciPy's splu.",
+            "2D model: 260x180 grid (18,875 flow cells) with a 1D out-of-plane closure and algebraic mixing-length turbulence model.",
+            "3D model: 90x62x16 grid (49,662 flow cells) resolving the vertical dimension directly, with an explicit thermal-interface-material layer above the SoC die.",
+            "Monitored convergence via two independent residuals - L-infinity divergence on deep interior flow cells reached ~1e-13 (2D) and ~1e-11 (3D).",
+            "Three-level grid refinement study (130x90, 260x180, 520x360) gives GCI <= 1.7% for battery, palm-rest, and exhaust metrics.",
+            "Predicted SoC temperatures: 96 C (2D) and 81 C (3D); published range from five independent reviews is 82-98 C.",
+            "2D/3D spread is attributable to the 6x larger heat-loss surface area resolved in 3D plus the explicit TIM resistance."
+        ],
         "skills": ["Python", "NumPy", "SciPy", "CFD", "Numerical Methods", "Validation"],
         "paper": "/assets/projects/demo/macbook_cfd_report.pdf",
         "code": "https://github.com/joeyjhkim/macbook-cfd"
@@ -12,7 +21,14 @@
         "title": "Helical Compression Spring Design Optimization",
         "imageSrc": "/assets/projects/spring_icon.svg",
         "description": "Minimum-mass spring optimization using fmincon under 7 constraints including stress, surge frequency, and buckling. Material: ASTM A228 music wire.",
-        "details": "Formulated the minimum-mass design of a helical compression spring as a constrained nonlinear program in three variables: wire diameter, mean coil diameter, and active coil count. Seven inequality constraints enforce the Wahl-corrected shear stress limit (Zimmerli criterion), coil-bind clearance, spring-index manufacturability bounds, minimum deflection stroke, surge-frequency margin (13x operating frequency), and Euler-column buckling stability. Solved with MATLAB's fmincon interior-point algorithm from eight Latin-hypercube starting points, and independently validated by a 40x40 brute-force parametric sweep over the design space. Both methods converge to the same optimum: d = 2.965 mm, D = 12.665 mm, Na = 7.77 coils, yielding a spring mass of 21.1 g with a stress safety factor of exactly 1.00. Sensitivity analysis reveals allowable shear stress as the dominant design driver — a 10% relaxation of the stress limit reduces optimal mass by approximately 18%.",
+        "details": [
+            "Formulated the minimum-mass design of a helical compression spring as a constrained nonlinear program in three variables: wire diameter, mean coil diameter, and active coil count.",
+            "Enforced seven inequality constraints: Wahl-corrected shear stress (Zimmerli criterion), coil-bind clearance, spring-index manufacturability bounds, minimum deflection stroke, surge-frequency margin (13x operating frequency), and Euler-column buckling stability.",
+            "Solved with MATLAB's fmincon interior-point algorithm from eight Latin-hypercube starting points.",
+            "Independently validated by a 40x40 brute-force parametric sweep across the design space.",
+            "Both methods converged to the same optimum: d = 2.965 mm, D = 12.665 mm, Na = 7.77 coils - mass = 21.1 g with a stress safety factor of exactly 1.00.",
+            "Sensitivity analysis identified allowable shear stress as the dominant driver - a 10% relaxation of the stress limit reduces optimal mass by ~18%."
+        ],
         "skills": ["MATLAB", "Optimization", "Mechanical Design", "FEA"],
         "paper": "/assets/projects/demo/spring_report.pdf"
     },
@@ -20,7 +36,14 @@
         "title": "2D CPU/GPU Die Thermal Simulation",
         "imageSrc": "/assets/projects/cpugpu_icon.svg",
         "description": "2D heat transfer simulation of a CPU/GPU chip stack using explicit, implicit, and steady-state finite difference solvers.",
-        "details": "Implemented a 2D transient and steady-state thermal simulation of a multi-layer CPU/GPU chip package (20 mm x 6 mm cross-section) in MATLAB using finite difference methods. The domain models three physical layers — silicon die, thermal interface material (TIM), and copper heat spreader — with three localized volumetric heat sources representing CPU cores. Three solvers were built and compared: an explicit forward-time central-space (FTCS) scheme, an implicit backward-time central-space (BTCS) scheme solved with Gauss-Seidel iteration, and a direct steady-state Gauss-Seidel solver. Peak junction temperatures reach 380–420 K depending on core position, with the center core running hottest due to reduced lateral conduction. The TIM layer was identified as the dominant thermal resistance in the stack, and the copper heat spreader proved essential for laterally redistributing heat and reducing hotspot temperatures. All three solvers converge to the same steady-state distribution, validating the numerical implementation.",
+        "details": [
+            "Implemented a 2D transient and steady-state thermal simulation of a multi-layer CPU/GPU chip package (20 mm x 6 mm cross-section) in MATLAB using finite difference methods.",
+            "Domain models three physical layers - silicon die, thermal interface material (TIM), and copper heat spreader - with three localized volumetric heat sources representing CPU cores.",
+            "Built and compared three solvers: explicit forward-time central-space (FTCS), implicit backward-time central-space (BTCS) solved via Gauss-Seidel, and a direct steady-state Gauss-Seidel solver.",
+            "Peak junction temperatures reached 380-420 K depending on core position; the center core runs hottest due to reduced lateral conduction.",
+            "Identified the TIM layer as the dominant thermal resistance and confirmed the copper heat spreader's role in laterally redistributing heat and reducing hotspot temperatures.",
+            "All three solvers converge to the same steady-state distribution, validating the numerical implementation."
+        ],
         "skills": ["MATLAB", "Thermal Analysis", "Numerical Methods", "FEA"],
         "paper": "/assets/projects/demo/cpu_gpu_thermal_report.pdf"
     },
@@ -28,7 +51,14 @@
         "title": "Detecting Faulty PCBs Using Thermal Image Analysis",
         "imageSrc": "/assets/projects/thermal_pcb_icon.png",
         "description": "97% accuracy detecting faulty connections on PCBs using thermal image processing",
-        "details": "Built a MATLAB image processing pipeline that detects faulty solder joints on printed circuit boards from thermal camera images. Synthetic thermal PCB images are generated as grids of circular pads with controlled defect injection — defective pads are assigned higher intensity to simulate excess heat dissipation from short circuits or degraded components, with additive Gaussian noise for realism. The detection pipeline preprocesses each image with grayscale conversion and Gaussian blur, then applies intensity thresholding (threshold = 0.8) to segment hotspot regions. Connected regions are extracted and characterized by centroid location and area. The system auto-generates a timestamped multi-page PDF report with side-by-side raw and annotated thermal images per board, plus CSV summaries for downstream analysis. Achieved 97% detection accuracy on the synthetic dataset.",
+        "details": [
+            "Built a MATLAB image processing pipeline that detects faulty solder joints on printed circuit boards from thermal camera images.",
+            "Generated synthetic thermal PCB images as grids of circular pads with controlled defect injection - defective pads assigned higher intensity to simulate excess heat from short circuits or degraded components, with additive Gaussian noise for realism.",
+            "Preprocessed each image with grayscale conversion and Gaussian blur, then applied intensity thresholding (threshold = 0.8) to segment hotspot regions.",
+            "Extracted connected regions and characterized them by centroid location and area.",
+            "Auto-generates timestamped multi-page PDF reports with side-by-side raw and annotated thermal images per board, plus CSV summaries for downstream analysis.",
+            "Achieved 97% detection accuracy on the synthetic dataset."
+        ],
         "skills": ["Image Processing", "MATLAB", "Data Analysis/Visuals"],
         "paper": "/assets/projects/demo/faulty_pcb_paper.pdf",
         "code": "https://github.com/joeyjhkim/faultyPCBdetection"
@@ -37,7 +67,14 @@
         "title": "Apple iPod Design Challenge",
         "imageSrc": "/assets/projects/apple_design_icon.svg",
         "description": "Two competing CAD design concepts for an Apple iPod redesign, with full assemblies, schematics, and DFM analysis.",
-        "details": "Designed two competing battery door release mechanisms for the Classic iPod in SolidWorks. Design 1 uses elastic bending arms — a button press deflects integrated cantilever beams downward, disengaging retention features to release the door. Design 2 uses an inclined-surface (wedge) mechanism — a button press drives clasps laterally outward via a 50-degree wedge angle, converting vertical motion into horizontal displacement that lifts the battery door. After a pro/con trade study evaluating durability, cycle life, and manufacturing, Design 2 was selected for its controlled, repeatable actuation and resistance to creep and fatigue. Each design includes full CAD assemblies, section views, exploded views, component-level FEA (von Mises stress under extreme loads with safety factors ranging from 2.1 to 13.7), detailed bill of materials with unit cost estimates, and button ergonomics sized to DoD design criteria. All parts are injection-molded PC or ABS.",
+        "details": [
+            "Designed two competing battery-door release mechanisms for the Classic iPod in SolidWorks.",
+            "Design 1 - elastic bending arms: a button press deflects integrated cantilever beams downward, disengaging retention features to release the door.",
+            "Design 2 - inclined-surface (wedge) mechanism: a button press drives clasps laterally outward via a 50-degree wedge, converting vertical motion into horizontal displacement that lifts the battery door.",
+            "Ran a pro/con trade study across durability, cycle life, and manufacturing; selected Design 2 for its controlled, repeatable actuation and resistance to creep and fatigue.",
+            "Produced full CAD assemblies, section views, exploded views, and component-level FEA (von Mises stress under extreme loads with safety factors from 2.1 to 13.7).",
+            "Included a detailed bill of materials with unit cost estimates and button ergonomics sized to DoD design criteria; all parts injection-molded PC or ABS."
+        ],
         "skills": ["CAD", "DFMA", "Product Design", "SolidWorks"],
         "paper": "/assets/projects/demo/apple_design_challenge.pdf",
         "paperLabel": "Design Report"
@@ -46,21 +83,36 @@
         "title": "Voice Controlled Robotic Arm Assistant",
         "imageSrc": "/assets/projects/robot_icon.png",
         "description": "Custom robotic arm with AI companion with speech recognition",
-        "details": "Designed and built a custom robotic arm with integrated voice control using speech recognition and machine learning. The mechanical design was modeled in CAD with FEA validation of joint loads and deflection under payload. The control system translates spoken commands into servo movements through a trained speech-to-intent model, enabling hands-free operation for pick-and-place tasks.",
+        "details": [
+            "Designed and built a custom robotic arm with integrated voice control using speech recognition and machine learning.",
+            "Modeled the mechanical design in CAD with FEA validation of joint loads and deflection under payload.",
+            "Built a control system that translates spoken commands into servo movements through a trained speech-to-intent model.",
+            "Enables hands-free operation for pick-and-place tasks."
+        ],
         "skills": ["CAD", "ML", "FEA"]
     },
     {
         "title": "TPMS for Headgear Impact Protection",
         "imageSrc": "/assets/projects/bike_helmet.png",
         "description": "Developing headgear with TPMS structures to improve shear protection with improved strength to weight efficiency",
-        "details": "Researching the use of Triply Periodic Minimal Surface (TPMS) lattice structures as energy-absorbing liners in protective headgear. TPMS geometries such as gyroid and Schwarz-P offer superior strength-to-weight ratios compared to traditional EPS foam. Using CAD modeling and finite element analysis, the project evaluates how different TPMS unit cell types, relative densities, and wall thicknesses affect impact energy absorption and shear force transmission. The goal is to develop a liner that reduces rotational acceleration during oblique impacts, improving protection against concussive injuries.",
+        "details": [
+            "Researching Triply Periodic Minimal Surface (TPMS) lattice structures - gyroid and Schwarz-P - as energy-absorbing liners in protective headgear.",
+            "TPMS geometries offer superior strength-to-weight ratios compared to traditional EPS foam.",
+            "Using CAD modeling and FEA to evaluate how TPMS unit cell type, relative density, and wall thickness affect impact energy absorption and shear force transmission.",
+            "Goal: develop a liner that reduces rotational acceleration during oblique impacts, improving protection against concussive injuries."
+        ],
         "skills": ["CAD", "FEA", "Data Analysis/Visuals"]
     },
     {
         "title": "Personal Productivity, Fitness, and Goals App",
         "imageSrc": "/assets/projects/app_icon.png",
         "description": "IOS app to track daily productivity, fitness, and goals with SwiftUI",
-        "details": "Built a personal productivity desktop application for tracking daily habits across productivity, fitness, and personal goals. The app runs fully offline with all data saved locally as a JSON file, surviving app updates and reboots. Features include a dashboard for tracking daily progress, streak monitoring, and customizable goal categories. Designed to help build consistent routines through visual progress feedback without requiring any cloud services or accounts.",
+        "details": [
+            "Built a personal productivity desktop application for tracking daily habits across productivity, fitness, and personal goals.",
+            "Runs fully offline - all data saved locally as a JSON file that survives app updates and reboots.",
+            "Features a dashboard for daily progress, streak monitoring, and customizable goal categories.",
+            "Designed to build consistent routines through visual progress feedback, without any cloud services or accounts."
+        ],
         "skills": ["Swift", "SwiftUI", "Front/Back End"],
         "code": "https://github.com/joeyjhkim/roadtochallenger"
     },
@@ -68,7 +120,14 @@
         "title": "Modeling Equity Option Performance",
         "imageSrc": "/assets/projects/options_icon.png",
         "description": "Options hit probabilities and expected payoff timing calculator",
-        "details": "Built a Python GUI application for evaluating equity options contracts. The tool computes Black-Scholes theoretical fair value for calls and puts, then runs Monte Carlo price path simulations to estimate the probability of hitting a user-defined take-profit threshold and the average time to reach it. A smart verdict system compares the option's bid-ask midpoint against the theoretical value to classify contracts as undervalued, fairly priced, or overvalued. Integrates live market data from Yahoo Finance API to auto-fill spot price, dividend yield, and implied volatility. The pipeline flows from user input through market data fetch, pricing engine, Monte Carlo simulation, Greek calculation, and valuation verdict — all displayed in a Tkinter interface.",
+        "details": [
+            "Built a Python GUI application for evaluating equity options contracts.",
+            "Computes Black-Scholes theoretical fair value for calls and puts.",
+            "Runs Monte Carlo price path simulations to estimate the probability of hitting a user-defined take-profit threshold and the average time to reach it.",
+            "Smart verdict system compares the option's bid-ask midpoint against theoretical value to classify contracts as undervalued, fairly priced, or overvalued.",
+            "Integrates live market data from Yahoo Finance API to auto-fill spot price, dividend yield, and implied volatility.",
+            "Full pipeline: user input -> market data fetch -> pricing engine -> Monte Carlo simulation -> Greek calculation -> valuation verdict, displayed in a Tkinter interface."
+        ],
         "skills": ["Numpy", "Matplotlib", "Derivatives Trading", "Tkinter"],
         "workflow": "/assets/projects/demo/options_calc_workflow.pdf",
         "code": "https://github.com/joeyjhkim/optionspricing"
