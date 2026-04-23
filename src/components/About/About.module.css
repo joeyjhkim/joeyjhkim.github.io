@@ -2,8 +2,8 @@
 
 .container {
   position: relative;
-  background-color: rgba(78, 204, 163, 0.06);
-  border: 1px solid rgba(78, 204, 163, 0.15);
+  background-color: rgba(78, 204, 163, 0.12);
+  border: 1px solid rgba(78, 204, 163, 0.3);
   border-radius: 15px;
   padding: 73px;
   margin-top: 129px;

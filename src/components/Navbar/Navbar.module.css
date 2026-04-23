@@ -49,7 +49,7 @@
 
 .resumeBtn:hover {
   background-color: var(--color-primary);
-  color: var(--color-dark);
+  color: var(--color-text-inverse);
 }
 
 @media screen and (max-width: 830px) {
@@ -90,14 +90,10 @@
     align-items: center;
     gap: 13px;
     border-radius: 10px;
-    background: rgb(28, 26, 58);
-    background: linear-gradient(
-      0deg,
-      rgba(28, 26, 58, 0.4) 0%,
-      rgba(28, 26, 58, 1) 100%
-    );
+    background: var(--color-surface);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     padding: 24px 33px;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 30px rgba(31, 33, 51, 0.18);
   }
 
   .menuOpen {
