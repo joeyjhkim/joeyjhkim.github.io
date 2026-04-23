@@ -102,9 +102,50 @@
 @media screen and (max-width: 830px) {
   .container {
     flex-direction: column-reverse;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 32px;
+    gap: 28px;
   }
 
   .content {
     align-items: center;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    line-height: 1.15;
+  }
+
+  .description {
+    font-size: 18px;
+    margin-bottom: 28px;
+    margin-right: 0;
+  }
+
+  .contactBtn {
+    font-size: 17px;
+    padding: 14px 22px;
+  }
+
+  .heroImg {
+    width: 60%;
+    max-width: 280px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 30px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .heroImg {
+    width: 68%;
   }
 }

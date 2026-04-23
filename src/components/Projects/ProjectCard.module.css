@@ -10,12 +10,52 @@
   border-top: 3px solid var(--color-primary);
   box-shadow: 0 16px 14px 0 rgba(0, 0, 0, 0.5);
   padding: 18px 24px;
+  width: 100%;
   max-width: 350px;
   height: 830px;
   cursor: pointer;
   transition: transform 0.15s ease-out, box-shadow 0.25s ease, border-color 0.25s ease;
   will-change: transform;
   overflow: hidden;
+}
+
+@media screen and (max-width: 830px) {
+  .container {
+    height: auto;
+    min-height: 620px;
+    padding: 16px 20px;
+  }
+
+  .imageWrapper {
+    height: 200px;
+    margin-bottom: 14px;
+  }
+
+  .title {
+    font-size: 20px;
+    min-height: 0;
+    max-height: none;
+  }
+
+  .description {
+    font-size: 16px;
+    margin-top: 8px;
+  }
+
+  .skill {
+    font-size: 16px;
+    padding: 2px 16px;
+  }
+
+  .links {
+    margin-top: 18px;
+    min-height: 0;
+  }
+
+  .link {
+    font-size: 16px;
+    padding: 4px 18px;
+  }
 }
 
 .container:hover {

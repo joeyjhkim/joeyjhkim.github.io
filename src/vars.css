@@ -1,13 +1,13 @@
 :root {
     /* Colors */
-    --color-text: #dde4f0;
+    --color-text: #e6ecf7;
     --color-primary: #8b7cf8;
-    --color-secondary: #131320;
-    --color-dark: #131224;
-    --color-bg: #0e0e1a;
+    --color-secondary: #1f2136;
+    --color-dark: #1a1c30;
+    --color-bg: #242744;
     --color-teal: #4ecca3;
     --color-sky: #38bdf8;
-    --color-surface: #14141f;
+    --color-surface: #2d3050;
 
     /* Fonts */
     --font-dm-sans: "DM Sans", sans-serif;

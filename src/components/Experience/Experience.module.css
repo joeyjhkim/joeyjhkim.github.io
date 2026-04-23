@@ -126,6 +126,17 @@
 }
 
 @media screen and (max-width: 830px) {
+  .container {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 56px;
+  }
+
+  .title {
+    font-size: 26px;
+    text-align: center;
+  }
+
   .content {
     flex-direction: column;
     align-items: center;
@@ -135,11 +146,49 @@
   .skills {
     width: 100%;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 24px;
+  }
+
+  .skillImageContainer {
+    width: 90px;
+    height: 90px;
+  }
+
+  .skillImageContainer img {
+    width: 55px;
+  }
+
+  .skill p {
+    font-size: 18px;
   }
 
   .history {
     width: 100%;
-    gap: 9px;
+    gap: 14px;
+  }
+
+  .historyItem {
+    padding: 16px;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .historyItem img {
+    width: 40px;
+  }
+
+  .historyItemDetails h3 {
+    font-size: 19px;
+  }
+
+  .historyItemDetails p {
+    font-size: 15px;
+  }
+
+  .historyItemDetails ul {
+    font-size: 15px;
+    margin-left: 10px;
   }
 }

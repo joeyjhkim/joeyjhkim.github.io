@@ -24,3 +24,21 @@
   gap: 15px;
   width: 100%;
 }
+
+@media screen and (max-width: 830px) {
+  .container {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 56px;
+  }
+
+  .title {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .projects {
+    margin-top: 24px;
+    gap: 20px;
+  }
+}
