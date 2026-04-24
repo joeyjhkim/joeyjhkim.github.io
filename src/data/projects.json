@@ -13,7 +13,7 @@
             "Predicted SoC temperatures: 96 C (2D) and 81 C (3D); published range from five independent reviews is 82-98 C.",
             "2D/3D spread is attributable to the 6x larger heat-loss surface area resolved in 3D plus the explicit TIM resistance."
         ],
-        "skills": ["Python", "NumPy", "SciPy", "CFD", "Numerical Methods", "Validation"],
+        "skills": ["Python", "CFD", "Numerical Methods", "Validation"],
         "paper": "/assets/projects/demo/macbook_cfd_report.pdf",
         "code": "https://github.com/joeyjhkim/macbook-cfd"
     },
