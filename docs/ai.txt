@@ -1,0 +1,12 @@
+# ai.txt - https://site.spawning.ai/spawning-ai-txt
+# Opt out of all generative AI training and ingestion.
+
+User-Agent: *
+Disallow: /
+
+# Specific opt-outs
+DataLicensing: deny
+TrainingData: deny
+GenerativeAI: deny
+ImageGeneration: deny
+TextGeneration: deny
