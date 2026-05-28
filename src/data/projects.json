@@ -1,5 +1,21 @@
 [
     {
+        "title": "Novel TPMS Metamaterial Generation + Multi-Physics Simulation",
+        "imageSrc": "/assets/projects/tpms_generation_icon.png",
+        "description": "Pipeline that generates genuinely novel triply-periodic minimal surfaces by sampling random points in a 12-dimensional Fourier basis, then drives them to zero mean curvature. Runs nonlinear FEA compression, transient heat conduction, and Darcy flow on each generated structure.",
+        "details": [
+            "Built a generative pipeline for novel TPMS metamaterials in pure Python - every known TPMS (Gyroid, Schwarz P, Diamond, I-WP, Neovius) is a specific point in a 12-dimensional Fourier basis of cubic-symmetric periodic functions; random coefficients produce surfaces that don't match any known TPMS.",
+            "Drives each candidate toward H = 0 (the mathematical definition of a minimal surface) via iterative mean curvature flow with numerical convergence checking.",
+            "Marching cubes contouring on a high-resolution voxel grid followed by Laplacian smoothing produces watertight, 3D-printable STL meshes.",
+            "Hand-rolled nonlinear FEA: Total Lagrangian formulation, Saint Venant-Kirchhoff hyperelastic material, Newton-Raphson over 15 load increments to 30% strain. No external FEA library.",
+            "Multi-physics analysis on each generated structure: transient heat conduction (implicit FDM, heterogeneous solid/void conductivity) and pressure-driven creeping flow through the void network (Darcy regime).",
+            "Per-geometry outputs: STL mesh, compression animation, mean-curvature heatmap, thermal/flow dashboards, force-displacement CSV.",
+            "By tuning wall thickness and which basis functions are active, stiffness can be dialed in precisely - at the right settings, TPMS lattices can be more efficient impact padding than conventional foam."
+        ],
+        "skills": ["Python", "FEA", "Numerical Methods", "Multi-Physics Simulation"],
+        "code": "https://github.com/joeyjhkim/tpms-metamaterials"
+    },
+    {
         "title": "2D/3D CFD of MacBook Pro 16-inch Thermal Management",
         "imageSrc": "/assets/projects/macbook_cfd_icon.svg",
         "description": "Two coupled Navier-Stokes + energy CFD solvers (2D and 3D) that predict the thermal field of a 16-inch MacBook Pro chassis under sustained CPU load. Validated against five independent published thermal reviews.",
