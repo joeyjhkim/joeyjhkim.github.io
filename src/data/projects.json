@@ -1,8 +1,8 @@
 [
     {
-        "title": "Novel TPMS Metamaterial Generation + Multi-Physics Simulation",
+        "title": "Novel TPMS Metamaterial Generation",
         "imageSrc": "/assets/projects/tpms_generation_icon.png",
-        "description": "Pipeline that generates genuinely novel triply-periodic minimal surfaces by sampling random points in a 12-dimensional Fourier basis, then drives them to zero mean curvature. Runs nonlinear FEA compression, transient heat conduction, and Darcy flow on each generated structure.",
+        "description": "Generates novel triply-periodic minimal surfaces via Fourier synthesis and mean curvature flow, then runs nonlinear FEA compression, heat conduction, and Darcy flow on each.",
         "details": [
             "Built a generative pipeline for novel TPMS metamaterials in pure Python - every known TPMS (Gyroid, Schwarz P, Diamond, I-WP, Neovius) is a specific point in a 12-dimensional Fourier basis of cubic-symmetric periodic functions; random coefficients produce surfaces that don't match any known TPMS.",
             "Drives each candidate toward H = 0 (the mathematical definition of a minimal surface) via iterative mean curvature flow with numerical convergence checking.",
@@ -12,7 +12,7 @@
             "Per-geometry outputs: STL mesh, compression animation, mean-curvature heatmap, thermal/flow dashboards, force-displacement CSV.",
             "By tuning wall thickness and which basis functions are active, stiffness can be dialed in precisely - at the right settings, TPMS lattices can be more efficient impact padding than conventional foam."
         ],
-        "skills": ["Python", "FEA", "Numerical Methods", "Multi-Physics Simulation"],
+        "skills": ["Python", "FEA", "Multi-Physics"],
         "code": "https://github.com/joeyjhkim/tpms-metamaterials"
     },
     {
