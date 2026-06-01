@@ -80,7 +80,7 @@
         "code": "https://github.com/joeyjhkim/faultyPCBdetection"
     },
     {
-        "title": "CNN Image Classification — From Manual Convolution to a Trained Network",
+        "title": "CNN Image Classification",
         "imageSrc": "/assets/projects/cnn_icon.svg",
         "description": "Two-part MATLAB project: hand-coded 2D convolution and classical filters, then trained CNNs on handwritten digits reaching 99.7% test accuracy.",
         "details": [
