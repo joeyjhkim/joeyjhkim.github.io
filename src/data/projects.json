@@ -1,5 +1,23 @@
 [
     {
+        "title": "Automated Skittles Color Sorter",
+        "imageSrc": "/assets/projects/skittles_icon.png",
+        "description": "An end-to-end mechatronics build on an STM32 that feeds Skittles one-at-a-time past an RGB sensor, classifies each color in firmware with a normalized-RGB algorithm, and routes it to the correct bin via a servo.",
+        "details": [
+            "Built an end-to-end automated color-sorting machine on an STM32 NUCLEO-L476RG that accepts a hopper of randomly mixed Skittles and routes each candy into the correct color bin with no operator input beyond power-on.",
+            "A 28BYJ-48 stepper-driven carousel indexes candies one-at-a-time past a TCS34725 RGB sensor; the sensor's own clear channel doubles as a candy-presence detector, eliminating a separate IR beam-break sensor and its wiring.",
+            "Classifies each candy in firmware with a brightness-invariant normalized-RGB threshold algorithm, sampling five times per candy with a 3-of-5 majority vote and an edge-triggered counter that debounces repeated reads of the same candy.",
+            "Routes candies with a single SG90 servo across six pre-calibrated angular positions (five colors plus a pass-through), driven by a 50 Hz TIM2 PWM channel.",
+            "Live operator feedback through five color-coded status LEDs, a 128x64 SSD1306 OLED over SPI showing per-color and running totals, and a USART2 debug stream for bench tuning.",
+            "Modeled the carousel, sorting chute, and bins in CAD and verified the load-bearing parts (support post, carousel cradle, chute) with FEA before printing; separated the 5 V motor rail from the 3.3 V logic rail so servo and stepper transients cannot droop the MCU.",
+            "Iteratively reduced part count during integration - an indexing carousel replaced a proposed feed servo and one SPI OLED replaced five I2C displays - simplifying the power budget and freeing bus and timer resources."
+        ],
+        "skills": ["Embedded C", "STM32", "Sensing & Control", "CAD/FEA"],
+        "demo": "/assets/projects/demo/skittles_demo.mp4",
+        "paper": "/assets/projects/demo/skittles_documentation.pdf",
+        "paperLabel": "Documentation"
+    },
+    {
         "title": "Novel TPMS Metamaterial Generation",
         "imageSrc": "/assets/projects/tpms_generation_icon.png",
         "description": "Generates novel triply-periodic minimal surfaces via Fourier synthesis and mean curvature flow, then runs nonlinear FEA compression, heat conduction, and Darcy flow on each.",
