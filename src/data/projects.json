@@ -80,6 +80,21 @@
         "code": "https://github.com/joeyjhkim/faultyPCBdetection"
     },
     {
+        "title": "CNN Image Classification — From Manual Convolution to a Trained Network",
+        "imageSrc": "/assets/projects/cnn_icon.svg",
+        "description": "Two-part MATLAB project: hand-coded 2D convolution and classical filters, then trained CNNs on handwritten digits reaching 99.7% test accuracy.",
+        "details": [
+            "Built convolutional neural networks from first principles in MATLAB, pairing a hand-coded convolution engine with trained deep networks to show they perform the same underlying operation.",
+            "Part 1 - implemented 2D correlation from scratch as an explicit zero-padded sliding-window sum, then used it for normalized Gaussian smoothing and classical edge detection (Sobel, Prewitt, Roberts, Laplacian) plus a low-pass/high-pass hybrid-image demo.",
+            "Part 2 - trained three CNNs of increasing depth on MATLAB's DigitDataset (10,000 handwritten digits, 28x28 grayscale) using the Deep Learning Toolbox.",
+            "Ran a controlled single-variable experiment: holding all else fixed and changing only the convolution kernel size from 3x3 to 5x5 raised test accuracy from 85.2% to 90.85% (+5.7%), making the improvement attributable rather than coincidental.",
+            "Designed a deeper architecture - five convolution layers with batch normalization, two max-pool stages, global average pooling, and dropout - that reached 99.7% test accuracy.",
+            "Visualized what the first conv layer learned: sample predictions with probability bars, conv1 activation maps, and the learned kernel montage, tracing the progression from blurry untrained filters to sharp edge/stroke detectors."
+        ],
+        "skills": ["MATLAB", "CNN", "Deep Learning", "Image Processing"],
+        "code": "https://github.com/joeyjhkim/cnn-image-classification"
+    },
+    {
         "title": "Apple iPod Design Challenge",
         "imageSrc": "/assets/projects/apple_design_icon.svg",
         "description": "Two competing CAD design concepts for an Apple iPod redesign, with full assemblies, schematics, and DFM analysis.",
