@@ -1,6 +1,6 @@
 [
     {
-        "title": "Automated Skittles Color Sorter",
+        "title": "Automated Candy Sorter",
         "imageSrc": "/assets/projects/skittles_icon.png",
         "description": "An end-to-end mechatronics build on an STM32 that feeds Skittles one-at-a-time past an RGB sensor, classifies each color in firmware with a normalized-RGB algorithm, and routes it to the correct bin via a servo.",
         "details": [
@@ -15,7 +15,7 @@
         "skills": ["Embedded C", "STM32", "Sensing & Control", "CAD/FEA"],
         "demo": "/assets/projects/demo/skittles_demo.mp4",
         "paper": "/assets/projects/demo/skittles_documentation.pdf",
-        "paperLabel": "Documentation"
+        "paperLabel": "Docs"
     },
     {
         "title": "Novel TPMS Metamaterial Generation",
