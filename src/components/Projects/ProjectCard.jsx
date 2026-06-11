@@ -1,49 +1,31 @@
-import React, { useRef, useState, useCallback } from "react";
+import React, { useCallback } from "react";
 
 import styles from "./ProjectCard.module.css";
 
-export const ProjectCard = ({
-  project,
-  onSelect,
-}) => {
-  const { title, imageSrc, description, skills, demo, workflow, paper, paperLabel, code, poster } = project;
-  const cardRef = useRef(null);
-  const [tilt, setTilt] = useState({ rotateX: 0, rotateY: 0 });
-  const [glowPos, setGlowPos] = useState({ x: 50, y: 50 });
-  const [isHovered, setIsHovered] = useState(false);
+const LINK_FIELDS = [
+  { key: "demo", label: "Demo" },
+  { key: "workflow", label: "Workflow" },
+  { key: "paper", label: "Paper" },
+  { key: "code", label: "Repo" },
+  { key: "poster", label: "Poster" },
+];
 
-  const handleMouseMove = useCallback((e) => {
-    const card = cardRef.current;
-    if (!card) return;
-
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateY = ((x - centerX) / centerX) * 8;
-    const rotateX = ((centerY - y) / centerY) * 8;
-
-    setTilt({ rotateX, rotateY });
-    setGlowPos({
-      x: (x / rect.width) * 100,
-      y: (y / rect.height) * 100,
-    });
-  }, []);
-
-  const handleMouseLeave = useCallback(() => {
-    setTilt({ rotateX: 0, rotateY: 0 });
-    setIsHovered(false);
-  }, []);
-
-  const handleMouseEnter = useCallback(() => {
-    setIsHovered(true);
-  }, []);
+export const ProjectCard = ({ project, onSelect }) => {
+  const { title, imageSrc, description, skills } = project;
 
   const handleClick = useCallback(() => {
     onSelect(project);
   }, [onSelect, project]);
+
+  const handleKeyDown = useCallback(
+    (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        onSelect(project);
+      }
+    },
+    [onSelect, project]
+  );
 
   const handleLinkClick = useCallback((e) => {
     e.stopPropagation();
@@ -51,30 +33,15 @@ export const ProjectCard = ({
 
   return (
     <div
-      ref={cardRef}
-      className={`${styles.container} ${isHovered ? styles.hovered : ""}`}
-      style={{
-        transform: `perspective(800px) rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`,
-      }}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      className={styles.container}
+      role="button"
+      tabIndex={0}
+      aria-label={`Open details for ${title}`}
       onClick={handleClick}
+      onKeyDown={handleKeyDown}
     >
-      {isHovered && (
-        <div
-          className={styles.glow}
-          style={{
-            background: `radial-gradient(circle at ${glowPos.x}% ${glowPos.y}%, rgba(139, 124, 248, 0.15) 0%, transparent 60%)`,
-          }}
-        />
-      )}
       <div className={styles.imageWrapper}>
-        <img
-          src={imageSrc}
-          alt={`Image of ${title}`}
-          className={styles.image}
-        />
+        <img src={imageSrc} alt={title} className={styles.image} />
       </div>
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>
@@ -90,60 +57,22 @@ export const ProjectCard = ({
           })}
         </ul>
         <div className={styles.links}>
-          {demo && (
-            <a
-              href={demo}
-              className={styles.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleLinkClick}
-            >
-              Demo
-            </a>
-          )}
-          {workflow && (
-            <a
-              href={workflow}
-              className={styles.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleLinkClick}
-            >
-              Workflow
-            </a>
-          )}
-          {paper && (
-            <a
-              href={paper}
-              className={styles.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleLinkClick}
-            >
-              {paperLabel || "Paper"}
-            </a>
-          )}
-          {code && (
-            <a
-              href={code}
-              className={styles.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleLinkClick}
-            >
-              Repo
-            </a>
-          )}
-          {poster && (
-            <a
-              href={poster}
-              className={styles.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleLinkClick}
-            >
-              Poster
-            </a>
+          {LINK_FIELDS.map(({ key, label }) =>
+            project[key] ? (
+              <a
+                key={key}
+                href={project[key]}
+                className={styles.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleLinkClick}
+              >
+                {key === "paper" && project.paperLabel
+                  ? project.paperLabel
+                  : label}{" "}
+                ›
+              </a>
+            ) : null
           )}
         </div>
       </div>

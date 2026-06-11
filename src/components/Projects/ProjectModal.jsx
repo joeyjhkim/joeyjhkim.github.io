@@ -1,9 +1,18 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 
 import styles from "./ProjectModal.module.css";
 
+const LINK_FIELDS = [
+  { key: "demo", label: "Demo" },
+  { key: "workflow", label: "Workflow" },
+  { key: "paper", label: "Paper" },
+  { key: "code", label: "Repo" },
+  { key: "poster", label: "Poster" },
+];
+
 export const ProjectModal = ({ project, onClose }) => {
-  const { title, imageSrc, description, details, skills, demo, workflow, paper, paperLabel, code, poster } = project;
+  const { title, imageSrc, description, details, skills } = project;
+  const closeBtnRef = useRef(null);
 
   const handleKeyDown = useCallback(
     (e) => {
@@ -15,11 +24,14 @@ export const ProjectModal = ({ project, onClose }) => {
   );
 
   useEffect(() => {
+    const previouslyFocused = document.activeElement;
     document.addEventListener("keydown", handleKeyDown);
     document.body.style.overflow = "hidden";
+    closeBtnRef.current?.focus();
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "";
+      previouslyFocused?.focus?.();
     };
   }, [handleKeyDown]);
 
@@ -32,12 +44,22 @@ export const ProjectModal = ({ project, onClose }) => {
     [onClose]
   );
 
-  const hasLinks = demo || workflow || paper || code || poster;
+  const links = LINK_FIELDS.filter(({ key }) => project[key]);
 
   return (
     <div className={styles.overlay} onClick={handleOverlayClick}>
-      <div className={styles.modal}>
-        <button className={styles.closeBtn} onClick={onClose} aria-label="Close modal">
+      <div
+        className={styles.modal}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-modal-title"
+      >
+        <button
+          ref={closeBtnRef}
+          className={styles.closeBtn}
+          onClick={onClose}
+          aria-label="Close modal"
+        >
           &times;
         </button>
 
@@ -47,7 +69,9 @@ export const ProjectModal = ({ project, onClose }) => {
           </div>
 
           <div className={styles.details}>
-            <h2 className={styles.title}>{title}</h2>
+            <h2 className={styles.title} id="project-modal-title">
+              {title}
+            </h2>
             {Array.isArray(details) ? (
               <ul className={styles.detailsList}>
                 {details.map((item, id) => (
@@ -66,33 +90,22 @@ export const ProjectModal = ({ project, onClose }) => {
               ))}
             </ul>
 
-            {hasLinks && (
+            {links.length > 0 && (
               <div className={styles.links}>
-                {demo && (
-                  <a href={demo} className={styles.link} target="_blank" rel="noopener noreferrer">
-                    Demo
+                {links.map(({ key, label }) => (
+                  <a
+                    key={key}
+                    href={project[key]}
+                    className={styles.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {key === "paper" && project.paperLabel
+                      ? project.paperLabel
+                      : label}{" "}
+                    ›
                   </a>
-                )}
-                {workflow && (
-                  <a href={workflow} className={styles.link} target="_blank" rel="noopener noreferrer">
-                    Workflow
-                  </a>
-                )}
-                {paper && (
-                  <a href={paper} className={styles.link} target="_blank" rel="noopener noreferrer">
-                    {paperLabel || "Paper"}
-                  </a>
-                )}
-                {code && (
-                  <a href={code} className={styles.link} target="_blank" rel="noopener noreferrer">
-                    Repo
-                  </a>
-                )}
-                {poster && (
-                  <a href={poster} className={styles.link} target="_blank" rel="noopener noreferrer">
-                    Poster
-                  </a>
-                )}
+                ))}
               </div>
             )}
           </div>

@@ -9,11 +9,12 @@ import linkedin_icon from "/assets/contact/linkedinIcon.png"
 
 export const Contact = () => {
   return (
-    <footer id="contact" className={styles.container}>
-      <div className={styles.text}>
-        <h2>Contact</h2>
-        <p>Feel free to reach out!</p>
-      </div>
+    <footer id="contact" className={styles.band}>
+      <div className={styles.container}>
+        <div className={styles.text}>
+          <h2>Contact</h2>
+          <p>Feel free to reach out!</p>
+        </div>
       <ul className={styles.links}>
         <li className={styles.link}>
           <img src={email_icon} alt="Email icon" />
@@ -31,6 +32,7 @@ export const Contact = () => {
           <a href="https://github.com/joeyjhkim">github.com/joeyjhkim</a>
         </li>
       </ul>
+      </div>
     </footer>
   );
 };

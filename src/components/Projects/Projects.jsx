@@ -19,6 +19,7 @@ export const Projects = () => {
 
   return (
     <section className={styles.container} id="projects">
+      <p className={styles.kicker}>Portfolio</p>
       <h2 className={styles.title}>Research and Projects</h2>
       <div className={styles.projects}>
         {projects.map((project, id) => {

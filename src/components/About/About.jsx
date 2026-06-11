@@ -7,26 +7,28 @@ import aboutImage from "/assets/about/me_with_bike.png";
 import GT_logo_desktop from "/assets/about/GT_logo_desktop.png";
 import GT_logo_mobile from "/assets/about/GT_logo_mobile.png";
 import hobby_icon from "/assets/about/hobbies.png";
+
 export const About = () => {
   return (
     <section className={styles.container} id="about">
+        <p className={styles.kicker}>About</p>
         <h2 className={styles.title}>About Me</h2>
         <div className={styles.content}>
             <img
             src={aboutImage}
-            alt="Me with bike"
+            alt="Joey with his motorcycle"
             className={styles.aboutImage}
             />
             <ul className={styles.aboutItems}>
                 <li className={styles.aboutItem}>
                     <img
                         src={GT_logo_desktop}
-                        alt="GT logo desktop"
+                        alt="Georgia Tech logo"
                         className={styles.iconDesktop}
                     />
                     <img
                         src={GT_logo_mobile}
-                        alt="GT logo mobile"
+                        alt="Georgia Tech logo"
                         className={styles.iconMobile}
                     />
                     <div className={styles.aboutItemText}>
@@ -35,12 +37,12 @@ export const About = () => {
                         My expected graduation is July 2026.
                         </p>
                     </div>
-                </li>                
+                </li>
 
                 <li className={styles.aboutItem}>
                     <img
                     src={hobby_icon}
-                    alt="Hobby Icon"
+                    alt="Hobbies icon"
                     />
                     <div className={styles.aboutItemText}>
                         <h3>Hobbies</h3>

@@ -1,8 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;900&display=swap');
+@import "./vars.css";
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "DM Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--color-body);
+  background-color: var(--color-canvas);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+section,
+footer {
+  scroll-margin-top: 72px;
 }

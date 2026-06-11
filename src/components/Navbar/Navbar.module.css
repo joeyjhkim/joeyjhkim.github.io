@@ -1,23 +1,31 @@
 @import "../../vars.css";
 
 .navbar {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--color-canvas);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 61px;
-  z-index: 2;
-  margin: 0 10%;
   gap: 20px;
+  height: 64px;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-margin);
 }
 
 .title {
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
   text-decoration: none;
-  color: var(--color-text);
+  color: var(--color-ink);
+  white-space: nowrap;
 }
-
 
 .menuBtn {
   display: none;
@@ -29,81 +37,104 @@
 
 .menuItems {
   display: flex;
-  gap: 47px;
+  align-items: center;
+  gap: var(--space-xl);
   list-style: none;
 }
 
 .menuItems a {
-  font-size: 25px;
-  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  color: var(--color-ink);
   text-decoration: none;
 }
 
-.resumeBtn {
-  padding: 8px 18px;
-  border: 2px solid var(--color-primary);
-  border-radius: 999px;
-  background-color: transparent;
-  transition: background-color 0.2s ease, color 0.2s ease;
+.menuItems a:hover {
+  color: var(--color-primary);
 }
 
-.resumeBtn:hover {
+.menuItems a.resumeBtn {
+  display: inline-block;
+  padding: 12px 24px;
   background-color: var(--color-primary);
-  color: var(--color-dark);
+  border-radius: 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--color-on-primary);
+  transition: background-color 0.2s ease;
+}
+
+.menuItems a.resumeBtn:hover {
+  background-color: var(--color-primary-active);
+  color: var(--color-on-primary);
 }
 
 @media screen and (max-width: 830px) {
-  .title {
-    font-size: 18px;
-    max-width: 70%;
+  .inner {
+    padding: 0 5%;
+    height: 56px;
   }
-  .navbar {
-    flex-direction: row;
-    align-items: center;
-    padding-top: 32px;
-    margin: 0 5%;
+
+  .title {
+    font-size: 15px;
+    max-width: 70%;
   }
 
   .menu {
     position: relative;
-    margin-right: 0;
     flex-direction: column;
     align-items: flex-end;
-    gap: 11px;
-    z-index: 3;
-  }
-
-  .menuItems {
-    position: absolute;
-    top: calc(100% + 8px);
-    right: 0;
   }
 
   .menuBtn {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    background: none;
+    border: none;
     cursor: pointer;
+  }
+
+  .menuBar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-ink);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .menuBarTopOpen {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menuBarMidOpen {
+    opacity: 0;
+  }
+
+  .menuBarBotOpen {
+    transform: translateY(-7px) rotate(-45deg);
   }
 
   .menuItems {
     display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
     flex-direction: column;
-    align-items: center;
-    gap: 13px;
-    border-radius: 10px;
-    background: rgb(28, 26, 58);
-    background: linear-gradient(
-      0deg,
-      rgba(28, 26, 58, 0.4) 0%,
-      rgba(28, 26, 58, 1) 100%
-    );
-    padding: 24px 33px;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    align-items: flex-end;
+    gap: var(--space-md);
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-hairline);
+    padding: var(--space-lg) var(--space-xl);
+    min-width: 200px;
   }
 
   .menuOpen {
     display: flex;
-    z-index: 1;
   }
-
-
 }

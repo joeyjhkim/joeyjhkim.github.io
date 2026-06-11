@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Convolutional neural network">
+  <rect width="96" height="96" rx="16" fill="#0f172a"/>
+  <!-- input image grid -->
+  <g stroke="#38bdf8" stroke-width="1.5" fill="none" opacity="0.9">
+    <rect x="12" y="30" width="24" height="24" rx="2"/>
+    <line x1="20" y1="30" x2="20" y2="54"/>
+    <line x1="28" y1="30" x2="28" y2="54"/>
+    <line x1="12" y1="38" x2="36" y2="38"/>
+    <line x1="12" y1="46" x2="36" y2="46"/>
+  </g>
+  <!-- conv kernel highlight -->
+  <rect x="12" y="30" width="16" height="16" rx="1" fill="#38bdf8" opacity="0.22"/>
+  <!-- feature map stack -->
+  <g fill="#f59e0b" opacity="0.85">
+    <rect x="46" y="26" width="18" height="18" rx="2" opacity="0.45"/>
+    <rect x="50" y="30" width="18" height="18" rx="2" opacity="0.65"/>
+    <rect x="54" y="34" width="18" height="18" rx="2"/>
+  </g>
+  <!-- fully connected nodes -->
+  <g fill="#a78bfa">
+    <circle cx="82" cy="34" r="3.2"/>
+    <circle cx="82" cy="48" r="3.2"/>
+    <circle cx="82" cy="62" r="3.2"/>
+  </g>
+  <!-- connections -->
+  <g stroke="#a78bfa" stroke-width="1" opacity="0.5">
+    <line x1="72" y1="43" x2="82" y2="34"/>
+    <line x1="72" y1="43" x2="82" y2="48"/>
+    <line x1="72" y1="43" x2="82" y2="62"/>
+  </g>
+  <!-- arrows -->
+  <g stroke="#64748b" stroke-width="1.5" opacity="0.8">
+    <line x1="38" y1="42" x2="44" y2="42"/>
+    <line x1="74" y1="43" x2="78" y2="43"/>
+  </g>
+  <text x="48" y="78" font-family="monospace" font-size="9" fill="#94a3b8" text-anchor="middle">99.7% acc</text>
+</svg>
