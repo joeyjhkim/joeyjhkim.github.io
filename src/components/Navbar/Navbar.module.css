@@ -58,7 +58,7 @@
   display: inline-block;
   padding: 12px 24px;
   background-color: var(--color-primary);
-  border-radius: 0;
+  border-radius: var(--radius-sm);
   font-weight: 700;
   letter-spacing: 0.5px;
   color: var(--color-on-primary);
@@ -130,6 +130,7 @@
     gap: var(--space-md);
     background-color: var(--color-canvas);
     border: 1px solid var(--color-hairline);
+    border-radius: var(--radius-md);
     padding: var(--space-lg) var(--space-xl);
     min-width: 200px;
   }

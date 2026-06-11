@@ -51,7 +51,7 @@
   text-decoration: none;
   background-color: var(--color-primary);
   color: var(--color-on-primary);
-  border-radius: 0;
+  border-radius: var(--radius-sm);
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.5px;
