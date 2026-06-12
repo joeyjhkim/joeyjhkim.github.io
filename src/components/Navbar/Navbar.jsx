@@ -1,15 +1,26 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import styles from "./Navbar.module.css";
+import { useSectionNav } from "../../hooks/useSectionNav";
+
+const SECTIONS = [
+  { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+  { id: "contact", label: "Contact" },
+];
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const goToSection = useSectionNav();
 
   return (
     <nav className={styles.navbar}>
       <div className={styles.inner}>
-        <a className={styles.title} href="/">
+        <Link className={styles.title} to="/">
           Joey Jaehyeok Kim
-        </a>
+        </Link>
         <div className={styles.menu}>
           <button
             type="button"
@@ -26,17 +37,15 @@ export const Navbar = () => {
             className={`${styles.menuItems} ${menuOpen ? styles.menuOpen : ""}`}
             onClick={() => setMenuOpen(false)}
           >
+            {SECTIONS.map(({ id, label }) => (
+              <li key={id}>
+                <a href={`#${id}`} onClick={goToSection(id)}>
+                  {label}
+                </a>
+              </li>
+            ))}
             <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#experience">Experience</a>
-            </li>
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
+              <Link to="/motorcycle">Motorcycle</Link>
             </li>
             <li>
               <a

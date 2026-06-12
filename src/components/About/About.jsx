@@ -33,9 +33,7 @@ export const About = () => {
                     />
                     <div className={styles.aboutItemText}>
                         <h3>Education</h3>
-                        <p>I am 4th year Undergraduate Mechanical Engineering student at Georgia Tech.<br />
-                        My expected graduation is July 2026.
-                        </p>
+                        <p>I graduated from Georgia Tech with a B.S. in Mechanical Engineering in July 2026.</p>
                     </div>
                 </li>
 

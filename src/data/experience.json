@@ -1,5 +1,13 @@
 [
     {
+      "role": "Product Design Engineer",
+      "organisation": "Apple",
+      "startDate": "Aug 2026",
+      "endDate": "Present",
+      "experiences": [],
+      "imageSrc": "/assets/experience/apple_logo.svg"
+    },
+    {
       "role": "Test Engineer",
       "organisation": "Tesla",
       "startDate": "Jan 2025",
