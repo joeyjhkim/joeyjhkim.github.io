@@ -49,15 +49,6 @@ export const Hero = () => {
           className={styles.heroImg}
         />
       </div>
-      <a
-        href="#about"
-        className={styles.scrollCue}
-        onClick={goToSection("about")}
-        aria-label="Scroll to About"
-      >
-        <span className={styles.scrollText}>Scroll</span>
-        <span className={styles.scrollChevron} aria-hidden="true" />
-      </a>
     </section>
   );
 };
