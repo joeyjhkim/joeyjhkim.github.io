@@ -112,9 +112,7 @@ export const Experience = () => {
           <div className={styles.detail} aria-live="polite">
             <div key={active} className={styles.detailInner}>
               <div className={styles.detailHead}>
-                <h3 className={styles.detailRole}>
-                  {item.role}, {item.organisation}
-                </h3>
+                <h3 className={styles.detailRole}>{item.role}</h3>
                 <span
                   className={`${styles.datePill} ${
                     isCurrent ? styles.datePillCurrent : ""
