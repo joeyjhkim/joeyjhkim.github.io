@@ -27,60 +27,192 @@
   line-height: 1.15;
 }
 
-.content {
-  display: flex;
-  flex-direction: row;
-  gap: var(--space-xxl);
-  margin-top: var(--space-xl);
+.hint {
+  margin-top: var(--space-xs);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--color-muted);
 }
 
-.history {
-  flex: 1 1 55%;
+/* ---- Horizontal timeline ---- */
+.timelineWrap {
+  margin-top: var(--space-xxl);
+}
+
+.hTimeline {
+  position: relative;
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.node {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
-  list-style: none;
+  align-items: center;
+  text-align: center;
+  padding: 0 var(--space-xs);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.historyItem {
+.drawn .node {
+  opacity: 1;
+  transform: none;
+}
+
+/* Connecting segment from this marker's centre to the previous one.
+   Each node is an equal-width flex cell, so a segment that spans one cell
+   width (-50% .. +50% of this node) links adjacent marker centres. */
+.node:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  top: 27px; /* centre of the 54px marker */
+  left: -50%;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-hairline-strong);
+  z-index: 0;
+}
+
+.filled:not(:first-child)::before {
+  background: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-primary-active)
+  );
+}
+
+.nodeBtn {
+  position: relative;
+  z-index: 1;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.marker {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: var(--space-lg);
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
   background-color: var(--color-canvas);
+  border: 2px solid var(--color-hairline-strong);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.marker img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.filled .marker {
+  border-color: var(--color-primary);
+}
+
+.active .marker {
+  border-color: var(--color-primary);
+  transform: scale(1.08);
+  box-shadow: 0 0 0 4px rgba(28, 105, 212, 0.15);
+}
+
+.nodeBtn:focus-visible .marker {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.nodeMeta {
+  margin-top: var(--space-xs);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nodeOrg {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-ink);
+}
+
+.active .nodeOrg {
+  color: var(--color-primary);
+}
+
+.nodeDate {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* ---- Detail panel ---- */
+.detail {
+  margin-top: var(--space-xl);
   border: 1px solid var(--color-hairline);
   border-radius: var(--radius-md);
+  background-color: var(--color-canvas);
   padding: var(--space-lg);
-  transition: border-color 0.2s ease;
+  min-height: 184px;
 }
 
-.historyItem:hover {
-  border-color: var(--color-hairline-strong);
+.detailInner {
+  animation: detailIn 0.35s ease both;
 }
 
-.historyItem img {
-  width: 50px;
-  flex-shrink: 0;
+@keyframes detailIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-.historyItemDetails h3 {
+.detailHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.detailRole {
   font-size: 18px;
   font-weight: 700;
+  line-height: 1.3;
   color: var(--color-ink);
-  line-height: 1.4;
 }
 
-.historyItemDetails p {
-  font-size: 13px;
-  font-weight: 400;
+.datePill {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--color-muted);
-  margin-top: var(--space-xxs);
+  background-color: var(--color-surface-strong);
+  border-radius: var(--radius-sm);
+  padding: 3px 10px;
 }
 
-.historyItemDetails ul {
-  margin-top: var(--space-sm);
+.datePillCurrent {
+  color: var(--color-on-primary);
+  background-color: var(--color-primary);
+}
+
+.bullets {
+  margin-top: var(--space-md);
   margin-left: 17px;
   list-style-position: outside;
   list-style-type: disc;
@@ -89,17 +221,35 @@
   color: var(--color-body);
 }
 
-.historyItemDetails ul li {
+.bullets li {
   margin-bottom: var(--space-xs);
   line-height: 1.5;
 }
 
+.detailEmpty {
+  margin-top: var(--space-md);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--color-muted);
+}
+
+/* ---- Skills (relocated below the timeline) ---- */
+.skillsSection {
+  margin-top: var(--space-xxl);
+}
+
+.skillsHeading {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-ink);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
 .skills {
-  flex: 1 1 40%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-content: flex-start;
   justify-content: center;
   gap: var(--space-lg);
 }
@@ -109,6 +259,14 @@
   flex-direction: column;
   align-items: center;
   gap: var(--space-xs);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.skillVisible {
+  opacity: 1;
+  transform: none;
 }
 
 .skillImageContainer {
@@ -120,11 +278,12 @@
   justify-content: center;
   width: 104px;
   height: 104px;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
 .skill:hover .skillImageContainer {
   border-color: var(--color-primary);
+  transform: translateY(-4px);
 }
 
 .skillImageContainer img {
@@ -135,6 +294,24 @@
   font-size: 14px;
   font-weight: 400;
   color: var(--color-body);
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .node,
+  .skill {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .detailInner {
+    animation: none;
+  }
+
+  .active .marker {
+    transform: none;
+  }
 }
 
 @media screen and (max-width: 830px) {
@@ -146,23 +323,58 @@
     padding: var(--space-xxl) 5%;
   }
 
-  .kicker {
+  .kicker,
+  .title,
+  .hint {
     text-align: center;
   }
 
   .title {
     font-size: 26px;
-    text-align: center;
   }
 
-  .content {
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-xl);
+  /* Let the timeline scroll horizontally if the nodes get tight. */
+  .hTimeline {
+    overflow-x: auto;
+    padding-bottom: var(--space-sm);
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .node {
+    flex: 0 0 auto;
+    width: 92px;
+    scroll-snap-align: center;
+  }
+
+  .node:not(:first-child)::before {
+    top: 23px; /* centre of the 46px mobile marker */
+  }
+
+  .marker {
+    width: 46px;
+    height: 46px;
+  }
+
+  .marker img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .nodeOrg {
+    font-size: 12px;
+  }
+
+  .detailRole {
+    font-size: 16px;
+  }
+
+  .bullets {
+    font-size: 14px;
+    margin-left: 14px;
   }
 
   .skills {
-    width: 100%;
     gap: var(--space-md);
   }
 
@@ -173,28 +385,5 @@
 
   .skillImageContainer img {
     width: 52px;
-  }
-
-  .history {
-    width: 100%;
-    gap: var(--space-md);
-  }
-
-  .historyItem {
-    padding: var(--space-md);
-    gap: var(--space-sm);
-  }
-
-  .historyItem img {
-    width: 40px;
-  }
-
-  .historyItemDetails h3 {
-    font-size: 16px;
-  }
-
-  .historyItemDetails ul {
-    font-size: 14px;
-    margin-left: 14px;
   }
 }

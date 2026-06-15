@@ -43,6 +43,7 @@
 }
 
 .menuItems a {
+  position: relative;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.3px;
@@ -52,6 +53,21 @@
 
 .menuItems a:hover {
   color: var(--color-primary);
+}
+
+.menuItems a.activeLink {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.menuItems a.activeLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -22px;
+  height: 2px;
+  background-color: var(--color-primary);
 }
 
 .menuItems a.resumeBtn {
@@ -137,5 +153,9 @@
 
   .menuOpen {
     display: flex;
+  }
+
+  .menuItems a.activeLink::after {
+    display: none;
   }
 }

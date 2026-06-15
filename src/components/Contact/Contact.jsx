@@ -33,6 +33,9 @@ export const Contact = () => {
         </li>
       </ul>
       </div>
+      <div className={styles.copyright}>
+        <p>© 2026 Joey Jaehyeok Kim. Built with React.</p>
+      </div>
     </footer>
   );
 };

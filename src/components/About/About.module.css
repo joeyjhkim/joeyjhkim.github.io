@@ -78,6 +78,40 @@
   color: var(--color-body);
 }
 
+.bikeCta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+  padding: 8px 16px;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-canvas);
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.bikeCta:hover {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.bikeCtaIcon {
+  font-size: 16px;
+}
+
+.bikeCtaArrow {
+  transition: transform 0.2s ease;
+}
+
+.bikeCta:hover .bikeCtaArrow {
+  transform: translateX(4px);
+}
+
 /* setting the icon to swap if we go to mobile mode*/
 .iconDesktop {
   display: block;

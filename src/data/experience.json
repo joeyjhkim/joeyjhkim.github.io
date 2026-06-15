@@ -4,7 +4,9 @@
       "organisation": "Apple",
       "startDate": "Aug 2026",
       "endDate": "Present",
-      "experiences": [],
+      "experiences": [
+        "iPad"
+      ],
       "imageSrc": "/assets/experience/apple_logo.svg"
     },
     {

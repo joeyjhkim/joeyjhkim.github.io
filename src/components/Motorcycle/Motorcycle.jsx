@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import styles from "./Motorcycle.module.css";
 import videos from "../../data/hobbies.json";
@@ -12,6 +13,9 @@ export const Motorcycle = () => {
 
   return (
     <section className={styles.container}>
+      <Link to="/" className={styles.back}>
+        <span aria-hidden="true">←</span> Back to home
+      </Link>
       <p className={styles.kicker}>Hobbies</p>
       <h2 className={styles.title}>Motorcycle Footage</h2>
       <p className={styles.intro}>
@@ -20,7 +24,11 @@ export const Motorcycle = () => {
 
       {videos.length === 0 ? (
         <div className={styles.empty}>
-          <p>Footage coming soon — check back shortly.</p>
+          <div className={styles.road} aria-hidden="true">
+            <span className={styles.bike}>🏍️</span>
+          </div>
+          <p className={styles.emptyTitle}>Footage coming soon</p>
+          <p>Gear's on, GoPro's charging — clips from the canyon land here soon.</p>
         </div>
       ) : (
         <div className={styles.grid}>

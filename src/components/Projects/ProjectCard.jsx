@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 
 import styles from "./ProjectCard.module.css";
+import { useInView } from "../../hooks/useInView";
 
 const LINK_FIELDS = [
   { key: "demo", label: "Demo" },
@@ -10,8 +11,9 @@ const LINK_FIELDS = [
   { key: "poster", label: "Poster" },
 ];
 
-export const ProjectCard = ({ project, onSelect }) => {
+export const ProjectCard = ({ project, onSelect, index = 0 }) => {
   const { title, imageSrc, description, skills } = project;
+  const [ref, inView] = useInView();
 
   const handleClick = useCallback(() => {
     onSelect(project);
@@ -33,7 +35,9 @@ export const ProjectCard = ({ project, onSelect }) => {
 
   return (
     <div
-      className={styles.container}
+      ref={ref}
+      className={`${styles.container} ${inView ? styles.visible : ""}`}
+      style={{ transitionDelay: `${Math.min(index * 70, 280)}ms` }}
       role="button"
       tabIndex={0}
       aria-label={`Open details for ${title}`}
@@ -41,7 +45,13 @@ export const ProjectCard = ({ project, onSelect }) => {
       onKeyDown={handleKeyDown}
     >
       <div className={styles.imageWrapper}>
-        <img src={imageSrc} alt={title} className={styles.image} />
+        <img
+          src={imageSrc}
+          alt={title}
+          className={styles.image}
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>

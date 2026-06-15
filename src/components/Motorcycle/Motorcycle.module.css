@@ -7,6 +7,25 @@
   min-height: 70vh;
 }
 
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: var(--space-lg);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back:hover {
+  color: var(--color-primary);
+  transform: translateX(-3px);
+}
+
 .kicker {
   font-size: 13px;
   font-weight: 700;
@@ -40,10 +59,82 @@
   text-align: center;
 }
 
+.emptyTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-ink) !important;
+  margin-bottom: var(--space-xxs);
+}
+
 .empty p {
   font-size: 16px;
   font-weight: 300;
   color: var(--color-muted);
+}
+
+/* Animated "road" with a bike riding across it, dashed centre line scrolling
+   underneath to fake motion. Purely decorative. */
+.road {
+  position: relative;
+  height: 64px;
+  margin-bottom: var(--space-lg);
+  border-bottom: 3px solid var(--color-hairline-strong);
+  overflow: hidden;
+}
+
+.road::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 3px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--color-primary) 0,
+    var(--color-primary) 18px,
+    transparent 18px,
+    transparent 36px
+  );
+  animation: roadScroll 0.6s linear infinite;
+}
+
+.bike {
+  position: absolute;
+  bottom: 4px;
+  font-size: 40px;
+  line-height: 1;
+  animation: ride 4.5s ease-in-out infinite;
+}
+
+@keyframes roadScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-36px);
+  }
+}
+
+@keyframes ride {
+  0% {
+    left: -12%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .road::after {
+    animation: none;
+  }
+
+  .bike {
+    animation: none;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .grid {

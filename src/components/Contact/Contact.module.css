@@ -63,9 +63,28 @@
   text-decoration: underline;
 }
 
+.copyright {
+  border-top: 1px solid var(--color-dark-elevated);
+}
+
+.copyright p {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--side-margin);
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  color: var(--color-on-dark-soft);
+}
+
 @media screen and (max-width: 830px) {
   .band {
     margin-top: var(--space-xxl);
+  }
+
+  .copyright p {
+    padding: var(--space-md) 5%;
+    text-align: center;
   }
 
   .container {

@@ -1,0 +1,48 @@
+@import "../../vars.css";
+
+.button {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 900;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease,
+    background-color 0.2s ease;
+  box-shadow: 0 4px 16px rgba(28, 105, 212, 0.35);
+}
+
+.visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.button:hover {
+  background-color: var(--color-primary-active);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+@media screen and (max-width: 830px) {
+  .button {
+    right: 18px;
+    bottom: 18px;
+    width: 44px;
+    height: 44px;
+  }
+}

@@ -4,5 +4,7 @@
   background-color: var(--color-canvas);
   width: 100%;
   min-height: 100%;
-  overflow-x: hidden;
+  /* `clip` (not `hidden`) prevents a horizontal scrollbar without turning
+     .App into a scroll container, which would break the sticky navbar. */
+  overflow-x: clip;
 }

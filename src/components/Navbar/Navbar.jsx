@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useMemo } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 import styles from "./Navbar.module.css";
 import { useSectionNav } from "../../hooks/useSectionNav";
+import { useScrollSpy } from "../../hooks/useScrollSpy";
 
 const SECTIONS = [
   { id: "about", label: "About" },
@@ -11,9 +12,15 @@ const SECTIONS = [
   { id: "contact", label: "Contact" },
 ];
 
+const SECTION_IDS = SECTIONS.map((s) => s.id);
+
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const goToSection = useSectionNav();
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+  const spyIds = useMemo(() => (isHome ? SECTION_IDS : []), [isHome]);
+  const activeSection = useScrollSpy(spyIds);
 
   return (
     <nav className={styles.navbar}>
@@ -39,7 +46,16 @@ export const Navbar = () => {
           >
             {SECTIONS.map(({ id, label }) => (
               <li key={id}>
-                <a href={`#${id}`} onClick={goToSection(id)}>
+                <a
+                  href={`#${id}`}
+                  onClick={goToSection(id)}
+                  className={
+                    isHome && activeSection === id ? styles.activeLink : ""
+                  }
+                  aria-current={
+                    isHome && activeSection === id ? "true" : undefined
+                  }
+                >
                   {label}
                 </a>
               </li>

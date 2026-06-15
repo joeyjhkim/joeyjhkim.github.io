@@ -44,7 +44,15 @@ export const ProjectModal = ({ project, onClose }) => {
     [onClose]
   );
 
-  const links = LINK_FIELDS.filter(({ key }) => project[key]);
+  const videoSrc =
+    typeof project.demo === "string" && project.demo.endsWith(".mp4")
+      ? project.demo
+      : null;
+
+  // A video demo renders inline, so don't also surface it as a text link.
+  const links = LINK_FIELDS.filter(
+    ({ key }) => project[key] && !(key === "demo" && videoSrc)
+  );
 
   return (
     <div className={styles.overlay} onClick={handleOverlayClick}>
@@ -64,9 +72,28 @@ export const ProjectModal = ({ project, onClose }) => {
         </button>
 
         <div className={styles.content}>
-          <div className={styles.imageSection}>
-            <img src={imageSrc} alt={title} className={styles.image} />
-          </div>
+          {videoSrc ? (
+            <div className={styles.videoSection}>
+              <video
+                className={styles.video}
+                src={videoSrc}
+                poster={imageSrc}
+                controls
+                playsInline
+                preload="metadata"
+              />
+            </div>
+          ) : (
+            <div className={styles.imageSection}>
+              <img
+                src={imageSrc}
+                alt={title}
+                className={styles.image}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          )}
 
           <div className={styles.details}>
             <h2 className={styles.title} id="project-modal-title">

@@ -1,6 +1,7 @@
 [
     {
         "title": "Automated Candy Sorter",
+        "category": "Mechatronics & Embedded",
         "imageSrc": "/assets/projects/skittles_icon.png",
         "description": "An end-to-end mechatronics build on an STM32 that feeds Skittles one-at-a-time past an RGB sensor, classifies each color in firmware with a normalized-RGB algorithm, and routes it to the correct bin via a servo.",
         "details": [
@@ -19,6 +20,7 @@
     },
     {
         "title": "Novel TPMS Metamaterial Generation",
+        "category": "Simulation & Analysis",
         "imageSrc": "/assets/projects/tpms_generation_icon.png",
         "description": "Generates novel triply-periodic minimal surfaces via Fourier synthesis and mean curvature flow, then runs nonlinear FEA compression, heat conduction, and Darcy flow on each.",
         "details": [
@@ -35,6 +37,7 @@
     },
     {
         "title": "2D/3D CFD of MacBook Pro 16-inch Thermal Management",
+        "category": "Simulation & Analysis",
         "imageSrc": "/assets/projects/macbook_cfd_icon.svg",
         "description": "Two coupled Navier-Stokes + energy CFD solvers (2D and 3D) that predict the thermal field of a 16-inch MacBook Pro chassis under sustained CPU load. Validated against five independent published thermal reviews.",
         "details": [
@@ -53,6 +56,7 @@
     },
     {
         "title": "Helical Compression Spring Design Optimization",
+        "category": "Simulation & Analysis",
         "imageSrc": "/assets/projects/spring_icon.svg",
         "description": "Minimum-mass spring optimization using fmincon under 7 constraints including stress, surge frequency, and buckling. Material: ASTM A228 music wire.",
         "details": [
@@ -68,6 +72,7 @@
     },
     {
         "title": "2D CPU/GPU Die Thermal Simulation",
+        "category": "Simulation & Analysis",
         "imageSrc": "/assets/projects/cpugpu_icon.svg",
         "description": "2D heat transfer simulation of a CPU/GPU chip stack using explicit, implicit, and steady-state finite difference solvers.",
         "details": [
@@ -83,6 +88,7 @@
     },
     {
         "title": "Detecting Faulty PCBs Using Thermal Image Analysis",
+        "category": "Software & ML",
         "imageSrc": "/assets/projects/thermal_pcb_icon.png",
         "description": "97% accuracy detecting faulty connections on PCBs using thermal image processing",
         "details": [
@@ -99,6 +105,7 @@
     },
     {
         "title": "CNN Image Classification",
+        "category": "Software & ML",
         "imageSrc": "/assets/projects/cnn_icon.svg",
         "description": "Two-part MATLAB project: hand-coded 2D convolution and classical filters, then trained CNNs on handwritten digits reaching 99.7% test accuracy.",
         "details": [
@@ -114,6 +121,7 @@
     },
     {
         "title": "Apple iPod Design Challenge",
+        "category": "Design & Research",
         "imageSrc": "/assets/projects/apple_design_icon.svg",
         "description": "Two competing CAD design concepts for an Apple iPod redesign, with full assemblies, schematics, and DFM analysis.",
         "details": [
@@ -130,6 +138,7 @@
     },
     {
         "title": "Voice Controlled Robotic Arm Assistant",
+        "category": "Mechatronics & Embedded",
         "imageSrc": "/assets/projects/robot_icon.png",
         "description": "Custom robotic arm with AI companion with speech recognition",
         "details": [
@@ -142,6 +151,7 @@
     },
     {
         "title": "TPMS for Headgear Impact Protection",
+        "category": "Design & Research",
         "imageSrc": "/assets/projects/bike_helmet.png",
         "description": "Developing headgear with TPMS structures to improve shear protection with improved strength to weight efficiency",
         "details": [
@@ -154,6 +164,7 @@
     },
     {
         "title": "Personal Productivity, Fitness, and Goals App",
+        "category": "Software & ML",
         "imageSrc": "/assets/projects/app_icon.png",
         "description": "IOS app to track daily productivity, fitness, and goals with SwiftUI",
         "details": [
@@ -167,6 +178,7 @@
     },
     {
         "title": "Modeling Equity Option Performance",
+        "category": "Software & ML",
         "imageSrc": "/assets/projects/options_icon.png",
         "description": "Options hit probabilities and expected payoff timing calculator",
         "details": [
