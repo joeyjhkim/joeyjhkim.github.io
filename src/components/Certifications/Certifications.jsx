@@ -32,10 +32,10 @@ export const Certifications = () => {
           <Reveal as="article" key={cert.title} delay={i * 80} className={styles.card}>
             <a
               className={styles.cardLink}
-              href={cert.file}
+              href={cert.verifyUrl || cert.file}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`View ${cert.title} certificate (opens PDF in a new tab)`}
+              aria-label={`View ${cert.title} certificate (opens in a new tab)`}
             >
               <span className={styles.badge}>
                 <AwardIcon />
@@ -44,20 +44,10 @@ export const Certifications = () => {
               <p className={styles.issuer}>{cert.issuer}</p>
               <span className={styles.datePill}>{cert.date}</span>
               <span className={styles.view}>
-                View certificate
+                {cert.verifyUrl ? "View & verify" : "View certificate"}
                 <span className={styles.arrow} aria-hidden="true">→</span>
               </span>
             </a>
-            {cert.verifyUrl && (
-              <a
-                className={styles.verify}
-                href={cert.verifyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Verify
-              </a>
-            )}
           </Reveal>
         ))}
       </div>

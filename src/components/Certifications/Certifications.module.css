@@ -120,29 +120,6 @@
   transform: translateX(4px);
 }
 
-/* Secondary "Verify" link, pinned top-right, sits above the card link. */
-.verify {
-  position: absolute;
-  top: var(--space-md);
-  right: var(--space-md);
-  z-index: 1;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  color: var(--color-muted);
-  text-decoration: none;
-  border: 1px solid var(--color-hairline-strong);
-  border-radius: var(--radius-sm);
-  padding: 3px 9px;
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.verify:hover {
-  color: var(--color-primary);
-  border-color: var(--color-primary);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .card,
   .arrow {
