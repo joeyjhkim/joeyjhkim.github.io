@@ -246,12 +246,14 @@
   margin-bottom: var(--space-lg);
 }
 
+/* Fixed-width columns so every tile is identical and evenly spaced — the
+   label length no longer stretches its cell. */
 .skills {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 132px);
   justify-content: center;
-  gap: var(--space-lg);
+  align-items: start;
+  gap: var(--space-lg) var(--space-md);
 }
 
 .skill {
@@ -375,7 +377,8 @@
   }
 
   .skills {
-    gap: var(--space-md);
+    grid-template-columns: repeat(auto-fit, 108px);
+    gap: var(--space-md) var(--space-sm);
   }
 
   .skillImageContainer {
