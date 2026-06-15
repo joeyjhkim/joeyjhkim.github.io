@@ -5,6 +5,7 @@ import { Hero } from "../Hero/Hero";
 import { Stats } from "../Stats/Stats";
 import { About } from "../About/About";
 import { Experience } from "../Experience/Experience";
+import { Certifications } from "../Certifications/Certifications";
 import { Projects } from "../Projects/Projects";
 import { Contact } from "../Contact/Contact";
 
@@ -25,6 +26,7 @@ export const Home = () => {
       <Stats />
       <About />
       <Experience />
+      <Certifications />
       <Projects />
       <Contact />
     </>

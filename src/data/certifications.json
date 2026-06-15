@@ -1,0 +1,21 @@
+[
+  {
+    "title": "Lean Six Sigma Green Belt",
+    "issuer": "Institute of Industrial & Systems Engineers",
+    "date": "Apr 2026",
+    "file": "/assets/certifications/leansixsigma.pdf"
+  },
+  {
+    "title": "Google Project Management",
+    "issuer": "Google · Coursera",
+    "date": "Jan 2026",
+    "file": "/assets/certifications/google_project_management.pdf",
+    "verifyUrl": "https://coursera.org/verify/professional-cert/M539IDVMPHEM"
+  },
+  {
+    "title": "Onshape Bootcamp Training",
+    "issuer": "Onshape (PTC)",
+    "date": "Jan 2024",
+    "file": "/assets/certifications/onshape_bootcamp.pdf"
+  }
+]
