@@ -86,17 +86,11 @@
   color: var(--color-on-primary);
 }
 
-@media screen and (max-width: 830px) {
-  .inner {
-    padding: 0 5%;
-    height: 56px;
-  }
-
-  .title {
-    font-size: 15px;
-    max-width: 70%;
-  }
-
+/* Menu collapses to the hamburger well before the 830px phone breakpoint: the
+   full row (title + 6 links + Resume) stops fitting its container just under
+   1005px, which clipped the Resume button between there and 830px. 1080px
+   leaves headroom for font-rendering differences across platforms. */
+@media screen and (max-width: 1080px) {
   .menu {
     position: relative;
     flex-direction: column;
@@ -157,5 +151,19 @@
 
   .menuItems a.activeLink::after {
     display: none;
+  }
+}
+
+/* Phone-only chrome — side margins and bar height follow the site-wide 830px
+   breakpoint, independent of where the menu collapses above. */
+@media screen and (max-width: 830px) {
+  .inner {
+    padding: 0 5%;
+    height: 56px;
+  }
+
+  .title {
+    font-size: 15px;
+    max-width: 70%;
   }
 }
